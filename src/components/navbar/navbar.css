@@ -1,0 +1,114 @@
+/* NAVBAR GENEL */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .logo img {
+    height: 60px;
+  }
+  
+  /* MENÜ LİNKLERİ (DESKTOP) */
+  .nav-links {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+  }
+  
+  .nav-links a,
+  .dropdown-title {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  
+  .nav-links a:hover,
+  .dropdown-title:hover {
+    color: #2e7d32; /* doğal yeşil tonu */
+  }
+  
+  /* DROPDOWN MENU */
+  .dropdown {
+    position: relative;
+  }
+  
+  .dropdown-menu {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    z-index: 100;
+  }
+  
+  .dropdown-menu a {
+    padding: 8px 15px;
+    white-space: nowrap;
+  }
+  
+  .dropdown-menu a:hover {
+    background-color: #f0f0f0;
+  }
+  
+  /* HAMBURGER */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+  }
+  
+  .hamburger span {
+    width: 25px;
+    height: 3px;
+    background: #333;
+    transition: 0.3s;
+  }
+  
+  /* MOBİL TASARIM */
+  @media (max-width: 768px) {
+    .nav-links {
+      position: absolute;
+      top: 70px;
+      right: 0;
+      background: white;
+      flex-direction: column;
+      width: 100%;
+      text-align: center;
+      display: none;
+      padding: 20px 0;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+  
+    .nav-links.open {
+      display: flex;
+    }
+  
+    .dropdown-menu {
+      position: static;
+      box-shadow: none;
+      padding: 0;
+    }
+  
+    .dropdown-menu a {
+      padding: 10px 0;
+    }
+  
+    .hamburger {
+      display: flex;
+    }
+  }
+  
