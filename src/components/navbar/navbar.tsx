@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./Navbar.css";
-import logoImage from "../../assets/logo.png";
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -49,7 +48,7 @@ const Navbar: React.FC = () => {
     <header className="navbar">
       <div className="logo">
         <Link to="/">
-          <img src={logoImage} alt="Kooperatif Logo" />
+        Logo
         </Link>
       </div>
 
