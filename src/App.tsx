@@ -9,6 +9,7 @@ import Contact from "./pages/contact/Contact";
 import BizdenHaberler from "./pages/bizden haberler/BizdenHaberler";
 import HaberDetay from "./pages/bizden haberler/HaberDetay";
 import Home2 from "./home2";
+import React from "react";
 
 function App() {
   return (
