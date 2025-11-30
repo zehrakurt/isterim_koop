@@ -1,0 +1,148 @@
+/* Genel Footer Stilleri */
+.footer-container {
+    background-color: #2c3e50; /* Koyu Mavi/Gri - Kurumsal görünüm */
+    color: #ecf0f1; /* Açık Gri/Beyaz metin */
+    padding: 40px 20px 0; /* Üstten ve yanlardan boşluk */
+    font-family: Arial, sans-serif;
+}
+
+/* Footer İçeriği - Ana Bölüm */
+.footer-content {
+    display: flex;
+    flex-wrap: wrap; /* Küçük ekranlarda alt satıra geçişi sağlar */
+    justify-content: space-between; /* Bölümler arasına boşluk koyar */
+    max-width: 1200px; /* Maksimum genişlik */
+    margin: 0 auto; /* Ortalamak için */
+    padding-bottom: 20px;
+    border-bottom: 1px solid #34495e; /* Alt bar ile ayırıcı çizgi */
+}
+
+/* Her Bir Bölüm */
+.footer-section {
+    flex-basis: 25%; /* Başlangıçta 4 bölüm sığdırmak için */
+    padding: 10px 15px;
+    min-width: 200px; /* Çok küçük cihazlarda bile okunabilirliği korumak için minimum genişlik */
+}
+
+/* Başlıklar */
+.footer-section h3,
+.footer-section h4 {
+    color: #1abc9c; /* Kooperatif Teması (Turkuaz) */
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+
+/* Bağlantı Listesi */
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 8px;
+}
+
+.footer-links a,
+.footer-contact p,
+.footer-info p {
+    color: #bdc3c7; /* Yumuşak metin rengi */
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 0.95em;
+}
+
+.footer-links a:hover,
+.bottom-link:hover {
+    color: #ecf0f1; /* Vurgu rengi */
+    text-decoration: underline;
+}
+
+/* İletişim İkonları (Emokji yer tutucular) */
+.contact-icon {
+    margin-right: 8px;
+    font-style: normal;
+}
+
+/* Sosyal Medya Bağlantıları */
+.social-links {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.social-icon {
+    color: #ecf0f1;
+    text-decoration: none;
+    border: 1px solid #ecf0f1;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.social-icon:hover {
+    background-color: #1abc9c;
+    border-color: #1abc9c;
+    color: #2c3e50;
+}
+
+/* Alt Telif Hakkı Barı */
+.footer-bottom {
+    text-align: center;
+    padding: 15px 0;
+    font-size: 0.85em;
+    color: #bdc3c7;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+.bottom-link {
+    color: #1abc9c;
+    text-decoration: none;
+    margin-left: 5px;
+}
+
+/* --- RESPONSIVE TASARIM (Media Queries) --- */
+
+/* Tablet ve Orta Boy Cihazlar (768px'in altı) */
+@media (max-width: 768px) {
+    .footer-content {
+        justify-content: space-around; /* Ortalamak için */
+    }
+
+    .footer-section {
+        flex-basis: 45%; /* Bölümleri ikişerli (2x2) satırlara böler */
+        margin-bottom: 20px;
+    }
+}
+
+/* Küçük Mobil Cihazlar (480px'in altı) */
+@media (max-width: 480px) {
+    .footer-section {
+        flex-basis: 100%; /* Her bölüm tam genişlik kaplar (1x4) */
+        padding: 10px 0;
+        text-align: center; /* Merkezi hizalama */
+        min-width: unset;
+    }
+
+    .footer-info p,
+    .footer-links ul,
+    .footer-contact p {
+        text-align: center;
+    }
+
+    .footer-links ul {
+        margin-bottom: 20px;
+    }
+
+    /* Bağlantı listesini dikeyde hizalamak */
+    .footer-links li {
+        display: block;
+    }
+    
+    .social-links {
+        justify-content: center; /* Sosyal medya ikonlarını ortalar */
+    }
+}
