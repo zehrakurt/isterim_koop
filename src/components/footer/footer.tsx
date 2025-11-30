@@ -1,5 +1,5 @@
 import React from 'react';
-import './Footer.css';
+import './footer.css';
 // Sosyal medya ikonları için buraya bir kütüphane (örneğin react-icons) veya SVG'ler eklenebilir.
 // Basitlik adına burada sadece metin yer tutucuları kullanılmıştır.
 
