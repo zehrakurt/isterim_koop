@@ -48,7 +48,7 @@ interface MemberData {
 const members: MemberData[] = [
     {
         name: 'Dr. Yiğit KÖYMEN',
-        role: 'Kurucu Ortak & İktisat Uzmanı',
+        role: 'Yönetim Kurulu Başkanı',
         cvContent: YIGIT_KOYMEN_CV,
         imageSrc: image
     },
