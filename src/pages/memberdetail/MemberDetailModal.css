@@ -1,0 +1,94 @@
+/* Modal Arka Planı (Overlay) */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.75); /* Yarı şeffaf siyah */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* En üstte görünmesi için yüksek z-index */
+    overflow-y: auto; /* İçerik taşarsa kaydırma çubuğu */
+    padding: 20px;
+}
+
+/* Modal İçerik Kutusu */
+.modal-content {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 900px;
+    width: 95%;
+    max-height: 90vh; /* Yüksekliğin %90'ını kaplar */
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Kapatma Butonu */
+.modal-close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 2em;
+    color: #999;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+    transition: color 0.2s;
+}
+
+.modal-close-btn:hover {
+    color: #333;
+}
+
+/* Başlıklar */
+.modal-member-name {
+    color: #2c3e50;
+    font-size: 2em;
+    margin-bottom: 5px;
+    border-bottom: 2px solid #1abc9c;
+    padding-bottom: 10px;
+}
+
+.modal-member-role {
+    color: #1abc9c;
+    font-size: 1.1em;
+    font-weight: 400;
+    margin-bottom: 25px;
+}
+
+/* CV İçeriği Stilleri */
+.modal-cv-body p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #333;
+    margin-bottom: 15px;
+    white-space: pre-line; /* CV içeriğindeki satır sonlarını korur */
+}
+
+/* Mobil Uyum */
+@media (max-width: 600px) {
+    .modal-content {
+        padding: 20px;
+        border-radius: 8px;
+    }
+    .modal-member-name {
+        font-size: 1.5em;
+    }
+    .modal-close-btn {
+        font-size: 1.8em;
+        top: 10px;
+        right: 15px;
+    }
+}

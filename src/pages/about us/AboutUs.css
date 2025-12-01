@@ -1,3 +1,7 @@
+body {
+  font-family: 'Inter', sans-serif; 
+}
+
 /* Sayfa Zemini */
 .about-us-container {
   background: #ffffff;
@@ -10,7 +14,9 @@ section {
   padding: 0;
 }
 
-/* Banner */
+/* -------------------------------------- */
+/* 1. BANNER STİLLERİ */
+/* -------------------------------------- */
 .about-banner {
   position: relative;
   max-width: 1200px;
@@ -36,9 +42,9 @@ section {
   width: 100%;
   height: 100%;
   background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.3) 0%,
-    rgba(0, 0, 0, 0.5) 100%
+      180deg,
+      rgba(0, 0, 0, 0.3) 0%,
+      rgba(0, 0, 0, 0.5) 100%
   );
   z-index: 1;
 }
@@ -93,127 +99,360 @@ section {
   border-radius: 2px;
 }
 
-/* Main Content */
+/* -------------------------------------- */
+/* 2. ANA İÇERİK (HİKAYEMİZ) STİLLERİ (YENİ TİPOGRAFİ EKLENDİ) */
+/* -------------------------------------- */
 .about-main {
   margin-top: 60px;
 }
 
 .about-text {
   background: #ffffff;
-  border-radius: 4px;
-  padding: 48px 32px;
-  border: 1px solid #e8ecef;
-  margin-bottom: 48px;
+  border-radius: 12px; /* Köşe yuvarlatmasını artırdık */
+  padding: 60px 40px; /* İç boşluğu artırdık */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Hafif gölge ekledik */
+  border: 1px solid #f0f0f0;
+  margin: 0 auto 48px;
+  max-width: 900px; /* Okunabilirliği artırmak için max genişliği daralttık */
 }
 
+/* Ana Başlık Stili (Vizyonumuz ve Faaliyetlerimiz) */
 .about-text h2 {
-  font-size: 2rem;
-  font-weight: 500;
-  color: #1a1a1a;
-  margin-bottom: 24px;
+  font-family: 'Poppins', sans-serif; 
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: #1a1a1a; /* !!! GÜNCELLENDİ: Koyu Siyah !!! */
+  border-bottom: 4px solid #1abc9c; /* Kurumsal Renk ile Güçlü Vurgu */
+  padding-bottom: 15px;
+  margin-bottom: 40px;
+  text-align: center;
+  letter-spacing: -0.5px;
 }
 
+/* Paragraf Stilleri (Vizyon Metniniz) */
 .about-text p {
-  font-size: 1rem;
-  line-height: 1.8;
-  color: #495057;
-  margin-bottom: 20px;
+  font-family: 'Inter', sans-serif; 
+  font-size: 1.15rem; /* Okunurluk için büyütüldü */
+  line-height: 1.85; /* Satır aralığı artırıldı */
+  color: #34495e; /* Daha okunaklı koyu mavi-gri ton */
+  margin-bottom: 35px; /* Paragraflar arasında daha fazla boşluk */
+  padding: 0 5px;
 }
 
 .about-text p:last-child {
   margin-bottom: 0;
 }
 
-/* Responsive */
+/* Vurgu Stili (Metin içerisindeki ilk satırlar/Ana Başlıklar) */
+/* "GENEL BAKIŞ-" veya "İSTERİM fonksiyonları;" gibi kısımlara denk gelen ilk satırları biçimlendirir. */
+.about-text p:first-line {
+  font-weight: 700;
+  color: #1a1a1a; /* !!! GÜNCELLENDİ: Koyu Siyah !!! */
+  display: block; 
+  margin-bottom: 5px;
+  font-size: 1.25rem; /* Başlık gibi davranması için daha büyük font */
+  padding-bottom: 5px;
+  border-bottom: 1px dashed #e8ecef;
+}
+
+/* -------------------------------------- */
+/* 3. EKİP BÖLÜMÜ STİLLERİ */
+/* -------------------------------------- */
+
+/* Ekip Bölümü Genel Stilleri */
+.team-section {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #f8f9fa; 
+  border-radius: 12px; 
+  margin-top: 48px; 
+}
+
+.team-section h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.2em;
+  color: #2c3e50;
+  margin-bottom: 10px;
+  font-weight: 600; 
+}
+
+.team-subtitle {
+  color: #7f8c8d;
+  margin-bottom: 40px;
+  font-size: 1.1em;
+}
+
+/* Üye Kartları Container */
+.team-members {
+  display: flex;
+  justify-content: center; 
+  flex-wrap: wrap; 
+  gap: 30px; 
+}
+
+/* Üye Kartı Stili */
+.member-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  padding: 30px 20px; 
+  text-align: center;
+  max-width: 350px;
+  width: 100%;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.member-card:hover {
+  transform: translateY(-5px); 
+  box-shadow: 0 8px 25px rgba(26, 188, 156, 0.2); /* Kurumsal renkte gölge vurgusu */
+  border: 1px solid #1abc9c; /* Hover'da belirgin sınır */
+}
+
+/* Üye Resmi */
+.member-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%; 
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 4px solid #1abc9c; 
+  box-shadow: 0 0 0 2px rgba(26, 188, 156, 0.5); 
+}
+
+/* İsim, Rol ve Biyografi */
+.member-name {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5em;
+  color: #1a1a1a; /* !!! GÜNCELLENDİ: Koyu Siyah ile uyumlu koyu griye yakın !!! */
+  margin-bottom: 5px;
+}
+
+.member-role {
+  color: #3498db; /* Rolü daha farklı bir renkle vurgulayalım */
+  font-style: normal;
+  font-weight: 500;
+  margin-bottom: 15px;
+  font-size: 0.95em;
+}
+
+.member-bio p {
+  font-size: 0.9em;
+  color: #7f8c8d;
+  margin-bottom: 15px;
+}
+
+.member-link-placeholder {
+  display: inline-block;
+  color: #1abc9c;
+  font-weight: 600;
+  margin-top: 5px;
+  padding: 5px 0;
+  transition: all 0.3s;
+}
+
+.member-card:hover .member-link-placeholder {
+  color: #2c3e50;
+}
+
+.member-link-placeholder .arrow {
+  margin-left: 8px;
+  transition: transform 0.3s ease;
+}
+
+.member-card:hover .arrow {
+  transform: translateX(5px);
+}
+
+/* -------------------------------------- */
+/* 4. MODAL STİLLERİ (Basit ve şık bir görünüm) */
+/* -------------------------------------- */
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+}
+
+.modal-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 600px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
+}
+
+.modal-overlay.open .modal-content {
+  transform: scale(1);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+}
+
+.modal-header h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.8rem;
+  color: #2c3e50;
+  margin: 0;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #95a5a6;
+  transition: color 0.2s;
+}
+
+.close-button:hover {
+  color: #e74c3c;
+}
+
+.modal-body h4 {
+  font-size: 1.2rem;
+  color: #1abc9c;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.modal-body p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #34495e;
+  white-space: pre-wrap; /* CV metnindeki boşlukları korur */
+  margin-bottom: 15px;
+}
+
+/* -------------------------------------- */
+/* 5. RESPONSIVE DÜZENLEMELER */
+/* -------------------------------------- */
 @media (max-width: 1024px) {
   .about-banner {
-    height: 450px;
+      height: 450px;
   }
 
   .banner-content {
-    padding: 50px 32px 35px;
+      padding: 50px 32px 35px;
   }
 }
 
 @media (max-width: 768px) {
   section {
-    padding: 0;
+      padding: 0;
   }
 
   .about-banner {
-    height: 400px;
-    margin-bottom: 60px;
-    border-radius: 8px;
-    padding: 0;
+      height: 400px;
+      margin-bottom: 60px;
+      border-radius: 8px;
+      padding: 0;
   }
 
   .banner-content {
-    left: 0;
-    right: 0;
-    padding: 40px 20px 30px;
+      left: 0;
+      right: 0;
+      padding: 40px 20px 30px;
   }
 
   .banner-content h1 {
-    font-size: 2rem;
+      font-size: 2rem;
   }
-
-  .hero-badge {
-    text-align: center;
-    display: block;
-  }
-
-  .hero-subtitle {
-    text-align: center;
-    max-width: 100%;
-  }
-
-  .hero-divider {
-    margin: 32px auto 0;
+  
+  .banner-content {
+      padding: 30px 20px 25px;
   }
 
   .about-text {
-    padding: 32px 20px;
+      padding: 32px 20px;
+      margin: 0 20px 48px;
   }
 
   .about-text h2 {
-    font-size: 1.75rem;
+      font-size: 2rem;
+  }
+
+  .about-text p {
+      font-size: 1.05rem;
+  }
+  
+  .about-text p:first-line {
+      font-size: 1.15rem;
+  }
+
+  .team-section {
+      padding: 40px 20px;
+  }
+  .team-members {
+      flex-direction: column; 
+      align-items: center;
+  }
+  .member-card {
+      margin-bottom: 20px;
   }
 }
 
 @media (max-width: 480px) {
   .about-us-container {
-    padding: 40px 0 80px;
+      padding: 40px 0 80px;
   }
 
   .about-banner {
-    height: 350px;
-    margin-bottom: 50px;
-    padding: 0;
-  }
-
-  .banner-content {
-    left: 0;
-    right: 0;
-    padding: 30px 20px 25px;
+      height: 350px;
+      margin-bottom: 50px;
+      border-radius: 0; /* Tam ekran banner için */
   }
 
   .banner-content h1 {
-    font-size: 1.75rem;
+      font-size: 1.75rem;
   }
 
   .hero-subtitle {
-    font-size: 1rem;
+      font-size: 1rem;
   }
 
   .about-text {
-    padding: 24px 20px;
+      padding: 24px 20px;
+      margin: 0 10px 40px;
   }
 
+  .about-text h2 {
+      font-size: 1.5rem;
+  }
+  
   .about-text p {
-    font-size: 0.95rem;
+      font-size: 1rem;
   }
-
-  .feature-item {
-    padding: 24px 20px;
+  
+  .modal-content {
+      padding: 20px;
   }
 }
