@@ -1,87 +1,91 @@
-import React from "react";
 import "./Academy.css";
 
-const Academy1: React.FC = () => {
+// PDF ikonunu Vite uyumlu şekilde import ediyoruz
+import pdfIcon from "../../assets/indir.svg";
+
+// PDF’ler
+import akademi1 from "../../assets/akademi-1.pdf";
+import akademi2 from "../../assets/akademi-2.pdf";
+import akademi3 from "../../assets/akademi-3.pdf";
+import akademi4 from "../../assets/akademi-4.pdf";
+
+const pdfDocuments = [
+  {
+    title: "BAŞLARKEN-İSTERİM Akademisi",
+    description: "Her şey bir ilk adımla başlar.",
+    url: akademi1,
+    color: "pink",
+  },
+  {
+    title: "SOSYAL KAPASİTE GELİŞTİRME PROGRAMI",
+    description: "Etrafınızda her şeyi para ve başarıya bağlayan birsistem var. Oysa değerli olan doğru bir amaç uğrunaharcanan çabalardır..",
+    url: akademi2,
+    color: "blue",
+  },
+  {
+    title: "BİREYSEL SOSYAL KAPASİTEGELİŞTİRME PROGRAMI",
+    description: "AMACIMIZ CEHALETLE VE HERTÜRLÜSÜYLE TOPYEKÜN SAVAŞTIR.",
+    url: akademi3,
+    color: "green",
+  },
+  {
+    title: "KURUMSAL SOSYAL KAPASİTEGELİŞTİRME PROGRAMI",
+    description: "Sosyal Girişimci yapılar olarak değer yaratmalarını ...",
+    url: akademi4,
+    color: "yellow",
+  },
+];
+
+const Academy = () => {
   return (
     <div className="academy-container">
+      {/* Banner */}
       <section className="academy-banner">
         <div className="banner-content">
-          <div className="hero-badge">Akademi</div>
-          <h1>Akademi 1</h1>
+          <div className="hero-badge">İsterim Akademi</div>
+          <h1>Dönüşüm ve Kapasite Geliştirme Programları</h1>
           <p className="hero-subtitle">
-            Eğitim ve gelişim programlarımızla üyelerimizin kişisel ve profesyonel
-            gelişimine katkı sağlıyoruz.
+            Bireyin kendini tanımlamasından başlayarak kurumlara ve toplumsal
+            eko-sistem tasarımına uzanan bütünsel model.
           </p>
           <div className="hero-divider"></div>
         </div>
       </section>
 
+      {/* PDF Kartları */}
       <section className="academy-main">
-        <div className="academy-text">
-          <h2>Akademi Programımız</h2>
-          <p>
-            Akademi 1 programımız, üyelerimizin bilgi ve becerilerini geliştirmelerine
-            yardımcı olmak için tasarlanmış kapsamlı bir eğitim programıdır. Alanında
-            uzman eğitmenler eşliğinde, teorik ve pratik bilgileri harmanlayarak
-            öğrenme deneyimi sunuyoruz.
-          </p>
-          <p>
-            Programımız, katılımcıların hem kişisel hem de profesyonel gelişimlerine
-            odaklanır. Modern eğitim metodları kullanarak, interaktif ve uygulamalı
-            bir öğrenme ortamı sağlıyoruz.
-          </p>
-          
-          <div className="academy-features">
-            <h3>Program Özellikleri</h3>
-            <div className="features-grid">
-              <div className="feature-item">
-                <div className="feature-icon">📚</div>
-                <h4>Kapsamlı İçerik</h4>
-                <p>Detaylı ve güncel eğitim materyalleri</p>
-              </div>
-              <div className="feature-item">
-                <div className="feature-icon">👥</div>
-                <h4>Uzman Eğitmenler</h4>
-                <p>Alanında deneyimli ve uzman kadro</p>
-              </div>
-              <div className="feature-item">
-                <div className="feature-icon">💼</div>
-                <h4>Pratik Uygulamalar</h4>
-                <p>Teorik bilgiyi pratiğe dönüştürme fırsatı</p>
-              </div>
-              <div className="feature-item">
-                <div className="feature-icon">🎓</div>
-                <h4>Sertifika</h4>
-                <p>Program sonunda katılım sertifikası</p>
-              </div>
-            </div>
+        <div className="pdf-section">
+          <div className="title-container">
+            <h2 className="section-title">Program Dokümanları ve Kılavuzlar</h2>
           </div>
 
-          <div className="academy-schedule">
-            <h3>Program Takvimi</h3>
-            <div className="schedule-list">
-              <div className="schedule-item">
-                <div className="schedule-date">Başlangıç</div>
-                <div className="schedule-content">
-                  <h4>Program Başlangıç Tarihi</h4>
-                  <p>Programımız yıl boyunca düzenli aralıklarla açılmaktadır.</p>
+          <p className="section-subtitle">
+            Aşağıda akademimizin dört temel programına ait PDF kılavuzları bulabilirsiniz.
+          </p>
+
+          <div className="pdf-grid">
+            {pdfDocuments.map((doc, index) => (
+              <div key={index} className="pdf-card">
+                <div className={`pdf-color-strip ${doc.color}`}></div>
+
+                <h4 className="pdf-title">{doc.title}</h4>
+                <p className="pdf-desc">{doc.description}</p>
+
+                {/* PDF ikon */}
+                <div className="pdf-icon-wrapper">
+                  <img src={pdfIcon} alt="PDF icon" className="pdf-svg" />
                 </div>
+
+                <a
+                  href={doc.url}
+                  className="download-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  İncele / İndir
+                </a>
               </div>
-              <div className="schedule-item">
-                <div className="schedule-date">Süre</div>
-                <div className="schedule-content">
-                  <h4>Program Süresi</h4>
-                  <p>Program toplam 8 hafta sürmektedir.</p>
-                </div>
-              </div>
-              <div className="schedule-item">
-                <div className="schedule-date">Katılım</div>
-                <div className="schedule-content">
-                  <h4>Katılım Şekli</h4>
-                  <p>Yüz yüze ve online seçenekleri mevcuttur.</p>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -89,5 +93,4 @@ const Academy1: React.FC = () => {
   );
 };
 
-export default Academy1;
-
+export default Academy;

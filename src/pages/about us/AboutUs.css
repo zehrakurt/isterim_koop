@@ -1,8 +1,7 @@
 body {
-  font-family: 'Inter', sans-serif; 
+  font-family: 'Inter', sans-serif;
 }
 
-/* Sayfa Zemini */
 .about-us-container {
   background: #ffffff;
   padding: 60px 0 100px;
@@ -14,251 +13,203 @@ section {
   padding: 0;
 }
 
-/* -------------------------------------- */
-/* 1. BANNER STİLLERİ */
-/* -------------------------------------- */
+/* 1. BANNER */
 .about-banner {
   position: relative;
-  max-width: 1200px;
   width: 100%;
   height: 500px;
-  margin: 0 auto 80px;
-  padding: 0;
-  overflow: hidden;
+  margin-bottom: 80px;
   border-radius: 12px;
+  overflow: hidden;
 }
 
 .banner-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
 }
 
 .banner-overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 0.3) 0%,
-      rgba(0, 0, 0, 0.5) 100%
-  );
-  z-index: 1;
+  top:0; left:0; right:0; bottom:0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.3), rgba(0,0,0,0.5));
+  z-index:1;
 }
 
 .banner-content {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 60px 32px 40px;
-  z-index: 2;
-  color: #ffffff;
+  bottom:0; left:0; right:0;
+  padding:60px 32px 40px;
+  z-index:2;
+  color:#fff;
 }
 
 .hero-badge {
-  display: inline-block;
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: #ffffff;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 16px;
-  padding-bottom: 8px;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  display:inline-block;
+  font-size:0.875rem;
+  font-weight:500;
+  color:#fff;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  margin-bottom:16px;
+  border-bottom:2px solid rgba(255,255,255,0.3);
+  padding-bottom:8px;
 }
 
 .banner-content h1 {
-  font-size: 2.75rem;
-  font-weight: 600;
-  color: #ffffff;
-  margin-bottom: 24px;
-  letter-spacing: -0.5px;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  font-size:2.75rem;
+  font-weight:600;
+  margin-bottom:24px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
 
 .hero-subtitle {
-  font-size: 1.15rem;
-  line-height: 1.9;
-  color: rgba(255, 255, 255, 0.95);
-  margin-bottom: 24px;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
-  max-width: 700px;
+  font-size:1.15rem;
+  line-height:1.9;
+  color:rgba(255,255,255,0.95);
+  margin-bottom:24px;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.2);
+  max-width:700px;
 }
 
 .hero-divider {
-  width: 60px;
-  height: 3px;
-  background: linear-gradient(90deg, #ffffff 0%, rgba(255, 255, 255, 0.7) 100%);
-  margin-top: 32px;
-  border-radius: 2px;
+  width:60px;
+  height:3px;
+  background: linear-gradient(90deg,#fff 0%, rgba(255,255,255,0.7) 100%);
+  margin-top:32px;
+  border-radius:2px;
 }
 
-/* -------------------------------------- */
-/* 2. ANA İÇERİK (HİKAYEMİZ) STİLLERİ (YENİ TİPOGRAFİ EKLENDİ) */
-/* -------------------------------------- */
+/* 2. ANA İÇERİK */
 .about-main {
-  margin-top: 60px;
+  margin-top:60px;
 }
 
 .about-text {
-  background: #ffffff;
-  border-radius: 12px; /* Köşe yuvarlatmasını artırdık */
-  padding: 60px 40px; /* İç boşluğu artırdık */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Hafif gölge ekledik */
-  border: 1px solid #f0f0f0;
-  margin: 0 auto 48px;
-  max-width: 900px; /* Okunabilirliği artırmak için max genişliği daralttık */
+  background:#fff;
+  border-radius:12px;
+  padding:60px 40px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.05);
+  border:1px solid #f0f0f0;
+  margin-bottom:48px;
+  max-width:900px;
+  margin-left:auto;
+  margin-right:auto;
 }
 
-/* Ana Başlık Stili (Vizyonumuz ve Faaliyetlerimiz) */
 .about-text h2 {
-  font-family: 'Poppins', sans-serif; 
-  font-size: 2.6rem;
-  font-weight: 700;
-  color: #1a1a1a; /* !!! GÜNCELLENDİ: Koyu Siyah !!! */
-  border-bottom: 4px solid #1abc9c; /* Kurumsal Renk ile Güçlü Vurgu */
-  padding-bottom: 15px;
-  margin-bottom: 40px;
-  text-align: center;
-  letter-spacing: -0.5px;
+  font-family:'Poppins',sans-serif;
+  font-size:2.6rem;
+  font-weight:700;
+  color:#1a1a1a;
+  border-bottom:4px solid #1abc9c;
+  padding-bottom:15px;
+  margin-bottom:40px;
+  text-align:center;
 }
 
-/* Paragraf Stilleri (Vizyon Metniniz) */
 .about-text p {
-  font-family: 'Inter', sans-serif; 
-  font-size: 1.15rem; /* Okunurluk için büyütüldü */
-  line-height: 1.85; /* Satır aralığı artırıldı */
-  color: #34495e; /* Daha okunaklı koyu mavi-gri ton */
-  margin-bottom: 35px; /* Paragraflar arasında daha fazla boşluk */
-  padding: 0 5px;
+  font-family:'Inter',sans-serif;
+  font-size:1.15rem;
+  line-height:1.85;
+  color:#34495e;
+  margin-bottom:35px;
 }
 
 .about-text p:last-child {
-  margin-bottom: 0;
+  margin-bottom:0;
 }
 
-/* Vurgu Stili (Metin içerisindeki ilk satırlar/Ana Başlıklar) */
-/* "GENEL BAKIŞ-" veya "İSTERİM fonksiyonları;" gibi kısımlara denk gelen ilk satırları biçimlendirir. */
 .about-text p:first-line {
-  font-weight: 700;
-  color: #1a1a1a; /* !!! GÜNCELLENDİ: Koyu Siyah !!! */
-  display: block; 
-  margin-bottom: 5px;
-  font-size: 1.25rem; /* Başlık gibi davranması için daha büyük font */
-  padding-bottom: 5px;
-  border-bottom: 1px dashed #e8ecef;
+  font-weight:700;
+  color:#1a1a1a;
+  display:block;
+  margin-bottom:5px;
+  font-size:1.25rem;
+  border-bottom:1px dashed #e8ecef;
+  padding-bottom:5px;
 }
 
-/* -------------------------------------- */
-/* 3. EKİP BÖLÜMÜ STİLLERİ */
-/* -------------------------------------- */
-
-/* Ekip Bölümü Genel Stilleri */
+/* 3. EKİP */
 .team-section {
-  padding: 60px 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-  text-align: center;
-  background-color: #f8f9fa; 
-  border-radius: 12px; 
-  margin-top: 48px; 
+  padding:60px 20px;
+  max-width:1200px;
+  margin:0 auto;
+  text-align:center;
+  background:#f8f9fa;
+  border-radius:12px;
+  margin-top:48px;
 }
 
 .team-section h2 {
-  font-family: 'Poppins', sans-serif;
-  font-size: 2.2em;
-  color: #2c3e50;
-  margin-bottom: 10px;
-  font-weight: 600; 
+  font-family:'Poppins',sans-serif;
+  font-size:2.2em;
+  color:#2c3e50;
+  margin-bottom:10px;
+  font-weight:600;
 }
 
-.team-subtitle {
-  color: #7f8c8d;
-  margin-bottom: 40px;
-  font-size: 1.1em;
-}
-
-/* Üye Kartları Container */
 .team-members {
-  display: flex;
-  justify-content: center; 
-  flex-wrap: wrap; 
-  gap: 30px; 
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:30px;
 }
 
-/* Üye Kartı Stili */
 .member-card {
-  background-color: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  padding: 30px 20px; 
-  text-align: center;
-  max-width: 350px;
-  width: 100%;
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background:#fff;
+  border-radius:10px;
+  box-shadow:0 4px 15px rgba(0,0,0,0.08);
+  padding:30px 20px;
+  text-align:center;
+  max-width:350px;
+  width:100%;
+  cursor:pointer;
+  transition:transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .member-card:hover {
-  transform: translateY(-5px); 
-  box-shadow: 0 8px 25px rgba(26, 188, 156, 0.2); /* Kurumsal renkte gölge vurgusu */
-  border: 1px solid #1abc9c; /* Hover'da belirgin sınır */
+  transform:translateY(-5px);
+  box-shadow:0 8px 25px rgba(26,188,156,0.2);
+  border:1px solid #1abc9c;
 }
 
-/* Üye Resmi */
 .member-image {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%; 
-  object-fit: cover;
-  margin-bottom: 15px;
-  border: 4px solid #1abc9c; 
-  box-shadow: 0 0 0 2px rgba(26, 188, 156, 0.5); 
+  width:150px;
+  height:150px;
+  border-radius:50%;
+  object-fit:cover;
+  margin-bottom:15px;
+  border:4px solid #1abc9c;
 }
 
-/* İsim, Rol ve Biyografi */
 .member-name {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.5em;
-  color: #1a1a1a; /* !!! GÜNCELLENDİ: Koyu Siyah ile uyumlu koyu griye yakın !!! */
-  margin-bottom: 5px;
+  font-family:'Poppins',sans-serif;
+  font-size:1.5em;
+  color:#1a1a1a;
+  margin-bottom:5px;
 }
 
 .member-role {
-  color: #3498db; /* Rolü daha farklı bir renkle vurgulayalım */
-  font-style: normal;
-  font-weight: 500;
-  margin-bottom: 15px;
-  font-size: 0.95em;
-}
-
-.member-bio p {
-  font-size: 0.9em;
-  color: #7f8c8d;
-  margin-bottom: 15px;
+  color:#3498db;
+  font-weight:500;
+  margin-bottom:15px;
+  font-size:0.95em;
 }
 
 .member-link-placeholder {
-  display: inline-block;
-  color: #1abc9c;
-  font-weight: 600;
-  margin-top: 5px;
-  padding: 5px 0;
-  transition: all 0.3s;
+  display:inline-block;
+  color:#1abc9c;
+  font-weight:600;
+  transition:all 0.3s;
 }
 
 .member-card:hover .member-link-placeholder {
-  color: #2c3e50;
+  color:#2c3e50;
 }
 
 .member-link-placeholder .arrow {
-  margin-left: 8px;
+  margin-left:8px;
   transition: transform 0.3s ease;
 }
 
@@ -266,40 +217,34 @@ section {
   transform: translateX(5px);
 }
 
-/* -------------------------------------- */
-/* 4. MODAL STİLLERİ (Basit ve şık bir görünüm) */
-/* -------------------------------------- */
-
+/* 4. MODAL */
 .modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.7);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-  opacity: 0;
-  visibility: hidden;
+  position:fixed;
+  top:0; left:0; right:0; bottom:0;
+  background:rgba(0,0,0,0.7);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:1000;
+  opacity:0;
+  visibility:hidden;
   transition: opacity 0.3s ease;
 }
 
 .modal-overlay.open {
-  opacity: 1;
-  visibility: visible;
+  opacity:1;
+  visibility:visible;
 }
 
 .modal-content {
-  background: #ffffff;
-  padding: 30px;
-  border-radius: 12px;
-  max-width: 600px;
-  width: 90%;
-  max-height: 80vh;
-  overflow-y: auto;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  background:#fff;
+  padding:30px;
+  border-radius:12px;
+  max-width:600px;
+  width:90%;
+  max-height:80vh;
+  overflow-y:auto;
+  box-shadow:0 10px 30px rgba(0,0,0,0.2);
   transform: scale(0.9);
   transition: transform 0.3s ease;
 }
@@ -309,150 +254,110 @@ section {
 }
 
 .modal-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 2px solid #f0f0f0;
-  padding-bottom: 15px;
-  margin-bottom: 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-bottom:2px solid #f0f0f0;
+  padding-bottom:15px;
+  margin-bottom:20px;
 }
 
 .modal-header h3 {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.8rem;
-  color: #2c3e50;
-  margin: 0;
+  font-family:'Poppins',sans-serif;
+  font-size:1.8rem;
+  color:#2c3e50;
 }
 
 .close-button {
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  color: #95a5a6;
-  transition: color 0.2s;
+  background:none;
+  border:none;
+  font-size:1.5rem;
+  cursor:pointer;
+  color:#95a5a6;
 }
 
 .close-button:hover {
-  color: #e74c3c;
+  color:#e74c3c;
 }
 
 .modal-body h4 {
-  font-size: 1.2rem;
-  color: #1abc9c;
-  margin-top: 15px;
-  margin-bottom: 10px;
+  font-size:1.2rem;
+  color:#1abc9c;
+  margin:15px 0 10px 0;
 }
 
 .modal-body p {
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: #34495e;
-  white-space: pre-wrap; /* CV metnindeki boşlukları korur */
-  margin-bottom: 15px;
+  font-size:0.95rem;
+  line-height:1.6;
+  color:#34495e;
+  white-space: pre-wrap;
+  margin-bottom:15px;
 }
 
-/* -------------------------------------- */
-/* 5. RESPONSIVE DÜZENLEMELER */
-/* -------------------------------------- */
-@media (max-width: 1024px) {
-  .about-banner {
-      height: 450px;
-  }
-
-  .banner-content {
-      padding: 50px 32px 35px;
-  }
+/* 5. PDF KARTI */
+.pdf-section {
+  padding:60px 20px;
+  text-align:center;
 }
 
-@media (max-width: 768px) {
-  section {
-      padding: 0;
-  }
-
-  .about-banner {
-      height: 400px;
-      margin-bottom: 60px;
-      border-radius: 8px;
-      padding: 0;
-  }
-
-  .banner-content {
-      left: 0;
-      right: 0;
-      padding: 40px 20px 30px;
-  }
-
-  .banner-content h1 {
-      font-size: 2rem;
-  }
-  
-  .banner-content {
-      padding: 30px 20px 25px;
-  }
-
-  .about-text {
-      padding: 32px 20px;
-      margin: 0 20px 48px;
-  }
-
-  .about-text h2 {
-      font-size: 2rem;
-  }
-
-  .about-text p {
-      font-size: 1.05rem;
-  }
-  
-  .about-text p:first-line {
-      font-size: 1.15rem;
-  }
-
-  .team-section {
-      padding: 40px 20px;
-  }
-  .team-members {
-      flex-direction: column; 
-      align-items: center;
-  }
-  .member-card {
-      margin-bottom: 20px;
-  }
+.pdf-card {
+  max-width:400px;
+  margin:20px auto;
+  background:#fefefe;
+  border-radius:12px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.1);
+  cursor:pointer;
+  transition:transform 0.3s ease, box-shadow 0.3s ease;
+  overflow:hidden;
 }
 
-@media (max-width: 480px) {
-  .about-us-container {
-      padding: 40px 0 80px;
-  }
+.pdf-card:hover {
+  transform:translateY(-5px);
+  box-shadow:0 15px 35px rgba(0,0,0,0.2);
+}
 
-  .about-banner {
-      height: 350px;
-      margin-bottom: 50px;
-      border-radius: 0; /* Tam ekran banner için */
-  }
+.pdf-card-content {
+  display:flex;
+  flex-direction:row;
+  align-items:center;
+}
 
-  .banner-content h1 {
-      font-size: 1.75rem;
-  }
+.pdf-card-thumbnail {
+  flex:0 0 100px;
+  height:130px;
+  background:#eaeaea url('../../assets/pdf-texture.png') center/cover no-repeat;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
 
-  .hero-subtitle {
-      font-size: 1rem;
-  }
+.pdf-card-thumbnail img {
+  max-width:70px;
+  max-height:70px;
+}
 
-  .about-text {
-      padding: 24px 20px;
-      margin: 0 10px 40px;
-  }
+.pdf-card-text {
+  flex:1;
+  padding:15px 20px;
+}
 
-  .about-text h2 {
-      font-size: 1.5rem;
-  }
-  
-  .about-text p {
-      font-size: 1rem;
-  }
-  
-  .modal-content {
-      padding: 20px;
-  }
+.pdf-card-text h3 {
+  font-family:'Poppins',sans-serif;
+  font-size:1.3rem;
+  margin-bottom:8px;
+  color:#1abc9c;
+}
+
+.pdf-card-text p {
+  font-size:0.95rem;
+  color:#34495e;
+  line-height:1.5;
+}
+
+/* 6. RESPONSIVE */
+@media (max-width:768px){
+  .team-members{flex-direction:column;align-items:center;}
+  .member-card{margin-bottom:20px;}
+  .pdf-card-content{flex-direction:column;}
+  .pdf-card-thumbnail{width:80%;height:150px;margin-bottom:10px;}
 }

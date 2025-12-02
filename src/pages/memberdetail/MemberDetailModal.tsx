@@ -22,21 +22,19 @@ const MemberDetailModal: React.FC<MemberDetailModalProps> = ({ isOpen, onClose, 
   ));
 
   return (
-    <div className="modal-overlay" onClick={onClose}>
-      <div className="modal-content" onClick={e => e.stopPropagation()}>
-        
-        <button className="modal-close-btn" onClick={onClose}>
-          &times;
-        </button>
-        
-        <h2 className="modal-member-name">{member.name}</h2>
-        <h3 className="modal-member-role">{member.role} Detaylı Özgeçmiş</h3>
-        
-        <div className="modal-cv-body">
-            {paragraphs}
-        </div>
-      </div>
+<div className={`modal-overlay ${isOpen ? 'open' : ''}`} onClick={onClose}>
+  <div className="modal-content" onClick={e => e.stopPropagation()}>
+    <button className="modal-close-btn" onClick={onClose}>
+      &times;
+    </button>
+    <h2 className="modal-member-name">{member.name}</h2>
+    <h3 className="modal-member-role">{member.role} Detaylı Özgeçmiş</h3>
+    <div className="modal-cv-body">
+      {paragraphs}
     </div>
+  </div>
+</div>
+
   );
 };
 
