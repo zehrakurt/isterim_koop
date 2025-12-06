@@ -9,6 +9,9 @@ import proje4 from './assets/proje4.pdf';
 import proje5 from './assets/proje5.pdf';
 import proje6 from './assets/proje6.pdf';
 
+// Hero resmi
+import heroImage from './assets/slider1.jpg';
+
 // İkonlar
 import { 
     FaHandshake, FaUsers, FaLeaf, FaLightbulb, 
@@ -32,13 +35,16 @@ const Home2: React.FC = () => {
         <div className="page-container">
 
             {/* HERO */}
-            <header className="hero-banner">
+            <header 
+                className="hero-banner"
+                style={{ backgroundImage: `url(${heroImage})` }}
+            >
                 <div className="content">
-                    <h1>Kooperatifinizle Geleceğe Değer Katın</h1>
-                    <p>Sorunlu, esnek ve güvenilir bir prototip geliştirmekten kaçının.</p>
+                    <h1>İsterim Kooperatif</h1>
+                    <p>Değer Üretim Paylaşım ve Eğitim Sosyal İşletme Kooperatifi.</p>
                     <div className="actions">
-                        <a href="#" className="btn btn-primary">Protokolü başlatın</a>
-                        <a href="#" className="btn btn-secondary">Bizimle iletişime geçin</a>
+                        <a href="/akademi-1" className="btn btn-primary">Akademi</a>
+                        <a href="/iletisim" className="btn btn-secondary">İletişim</a>
                     </div>
                 </div>
             </header>
@@ -48,16 +54,41 @@ const Home2: React.FC = () => {
                 <div className="section-title">
                     <h2>Hakkımızda</h2>
                 </div>
+
                 <p className="about-description">
-                    Kooperatifinizle yaralı topluluklara kanat, sağlayan sürdürülebilir projeler geliştirir 
-                    ve sempatiyi ön planda kılar.
+                    Sosyal ve kültürel konularda kar amacı gütmeden,
+                    STÖ'ler ve resmi kurumlar ile ortak projeler geliştirmek.
+                    Stratejik ve iktisadi konularda bilimsel çalışmalar yapmak.
+                    Sanat, doğa sporları ve ekolojik turizm faaliyetleri organize etmek.
+                    Doğal yaşam, organik tarım konularında kırsal bölgelerde yerinde uygulamalar yapmak.
+                    Kadın üreticiler ve kadın kooperatiflerinin faaliyetlerine destek vermek.
+                    Tarihi ve arkeolojik eserlerimize sahip çıkmak ve tanıtmak.
                 </p>
 
                 <div className="icon-cards-container">
-                    <IconCard Icon={FaHandshake} title="Şeffaflık" description="Dosyalara erişimi sağlayan gerçek zamanlı prototip." />
-                    <IconCard Icon={FaUsers} title="Topluluk" description="Rizikosundaki yangınlara karşı duyarlılığın azalması." />
-                    <IconCard Icon={FaLeaf} title="Sürdürülebilirlik" description="Başarılı olan yönetim görünüyor." />
-                    <IconCard Icon={FaLightbulb} title="İnovasyon" description="Bizimle iletişime geçin, hemen ulaşın." />
+                    <IconCard 
+                        Icon={FaHandshake} 
+                        title="Kooperatifçilik Kavramı ve Önemi" 
+                        description="Kooperatiflerin tanımı, önemi ve tarihsel gelişimi." 
+                    />
+
+                    <IconCard 
+                        Icon={FaUsers} 
+                        title="Kooperatif Genel Kurulu" 
+                        description="Genel kurulun görevleri, yetkileri ve çalışma süreçleri." 
+                    />
+
+                    <IconCard 
+                        Icon={FaUsersCog} 
+                        title="Yönetim ve Denetim Kurulu" 
+                        description="Kurulların görevleri, sorumlulukları ve işleyişi." 
+                    />
+
+                    <IconCard 
+                        Icon={FaLightbulb} 
+                        title="Kooperatiflerde Girişimcilik" 
+                        description="Yenilikçilik, rekabet gücü ve proje geliştirme faaliyetleri." 
+                    />
                 </div>
             </section>
 
@@ -69,26 +100,22 @@ const Home2: React.FC = () => {
 
                 <div className="slider-container">
 
-                    {/* Sol ok */}
                     <button className="slider-btn left" onClick={scrollLeft}>
                         <FaChevronLeft />
                     </button>
 
-                    {/* Slider alanı */}
                     <div className="slider" ref={sliderRef}>
-                        <ProjectCard title="Yeşil Enerji Projesi" description="Sürdürülebilir enerji kaynaklarının kullanımı." pdfLink={proje1} />
-                        <ProjectCard title="Topluluk Bahçesi" description="Organik tarıma odaklanan üretim süreci." pdfLink={proje2} />
-                        <ProjectCard title="Sürdürülebilir Tarım" description="Doğru yöntemlerle tarımın desteklenmesi." pdfLink={proje3} />
-                        <ProjectCard title="Atık Yönetimi" description="Atıkların yeniden kullanımı ve bertarafı." pdfLink={proje4} />
-                        <ProjectCard title="Kooperatif Dijitalleşme" description="Dijital dönüşüm süreçlerinin geliştirilmesi." pdfLink={proje5} />
-                        <ProjectCard title="Eğitim Destek Programı" description="Topluluk eğitim projelerinin yönetimi." pdfLink={proje6} />
+                        <ProjectCard title="Kadın Elinden" description="Kadın üreticilerin ürünlerini tek bir sayfada buluşturuyoruz." pdfLink={proje1} />
+                        <ProjectCard title="Sosyal Farkındalık Projesi" description="Ortaklık payının en az %50’si kadın olan işletmeler." pdfLink={proje2} />
+                        <ProjectCard title="Bilgelik Treni" description="Anadolu bilgeliğine dayalı değer odaklı toplum tasarımı." pdfLink={proje3} />
+                        <ProjectCard title="Bilgelik İsterim" description="Değişen dünyaya uyum sağlayan düşünce ve yaşam yaklaşımı." pdfLink={proje4} />
+                        <ProjectCard title="Bilgelik Treni Ankara" description="Gençler, kadınlar, üniversite öğrencileri ve STK'lar hedef kitlemizdir." pdfLink={proje5} />
+                        <ProjectCard title="Değer Üretimi ve Paylaşımı" description="Değer üretim odaklı bir toplum inşası hedeflenmektedir." pdfLink={proje6} />
                     </div>
 
-                    {/* Sağ ok */}
                     <button className="slider-btn right" onClick={scrollRight}>
                         <FaChevronRight />
                     </button>
-
                 </div>
             </section>
 
@@ -102,24 +129,25 @@ const Home2: React.FC = () => {
                     <ServiceCard Icon={FaBox} title="Ortak Ürün Dağıtımı" />
                     <ServiceCard Icon={FaGraduationCap} title="Eğitim ve Atölyeler" />
                     <ServiceCard Icon={FaUsersCog} title="Danışmanlık" />
-                    <ServiceCard Icon={FaCheckCircle} title="Sürdürülebilirlik Çözümleri" />
+                    <ServiceCard Icon={FaCheckCircle} title="Proje ve Destek Yönetimi" />
                 </div>
             </section>
 
             {/* ALT BİLDİRİM */}
-            <section className="section feedback-banner">
-                <div className="feedback-content">
-                    <h3>Geri Bildirimler</h3>
-                    <p>Neler yaptığınızı gösteren gerçek bir geri bildirim?</p>
-                    <p className="small-text">Soru sormak, haberdar olmak, yeni bir program başlatmak.</p>
-                </div>
-            </section>
+           {/* ALT BİLDİRİM */}
+<section className="section feedback-banner">
+    <div className="feedback-content">
+        <h3>Bilgi Paylaştıkça Çoğalır</h3>
+        <p>Eğitimler, programlar ve etkinliklerle kooperatif bilincini yaygınlaştırıyoruz.</p>
+        <p className="small-text">Kooperatifçilik alanında bilgi, eğitim ve toplumsal dönüşüm odaklı programlar yürütüyoruz.</p>
+    </div>
+</section>
+
         </div>
     );
 };
 
 export default Home2;
-
 
 //
 // ---------------------------
@@ -127,7 +155,6 @@ export default Home2;
 // ---------------------------
 //
 
-// IconCard
 interface IconCardProps {
     Icon: React.ElementType;
     title: string;
@@ -144,7 +171,6 @@ const IconCard: React.FC<IconCardProps> = ({ Icon, title, description }) => (
     </div>
 );
 
-// ProjectCard — SLIDER + PDF
 interface ProjectCardProps {
     title: string;
     description: string;
@@ -164,7 +190,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, pdfLink }
     </div>
 );
 
-// ServiceCard
 interface ServiceCardProps {
     Icon: React.ElementType;
     title: string;

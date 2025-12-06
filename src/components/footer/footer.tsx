@@ -12,36 +12,40 @@ const Footer: React.FC = () => {
         
         {/* Kooperatif Bilgileri */}
         <div className="footer-section footer-info">
-          <h3>Kooperatif Adı</h3>
+          <h3>İsterim Kooperatif</h3>
           <p>
-            Yerel üreticiler ve tüketiciler arasında sürdürülebilir bir köprü kurmayı hedefliyoruz. 
-            Güvenilir, doğal ve adil ticareti destekliyoruz.
+          Önceliğimiz, sosyal inovasyonlar, sosyal girişimcilik ve modüler akademik çalışmalar yoluyla kurumların, firmaların, STK'ların, belediyelerin ve yerel yönetimlerin sosyal kapasitelerini geliştirmektir.
           </p>
         </div>
 
         {/* Hızlı Bağlantılar */}
         <div className="footer-section footer-links">
-          <h4>Hızlı Bağlantılar</h4>
-          <ul>
-            <li><a href="/hakkimizda">Hakkımızda</a></li>
-            <li><a href="/urunler">Ürünler</a></li>
-            <li><a href="/uyelik">Üyelik / Destek</a></li>
-            <li><a href="/sss">Sıkça Sorulan Sorular</a></li>
-            <li><a href="/kvkk">KVKK</a></li>
-          </ul>
-        </div>
-
+  <h4>Hızlı Bağlantılar</h4>
+  <ul>
+    <li><a href="/">Anasayfa</a></li>
+    <li><a href="/about-us">Biz Kimiz</a></li>
+    <li><a href="/misyonumuz">Misyonumuz</a></li>
+    <li><a href="/vizyonumuz">Vizyonumuz</a></li>
+    <li><a href="/akademi-1">Akademi</a></li>
+    <li><a href="/bizden-haberler">Bizden Haberler</a></li>
+    <li><a href="/iletisim">İletişim</a></li>
+  </ul>
+</div>
         {/* İletişim */}
         <div className="footer-section footer-contact">
           <h4>Bize Ulaşın</h4>
-          <p>
-            <i className="contact-icon">📍</i> Adres: Örnek Mah. Koop Sok. No: 123, Şehir
+          <p className='artı'>
+            <i className="contact-icon">📍</i> İsterim Kooperatif.
+
+Hacettepe mah. divan sok. no:13/1
+
+Altındag-Ankara
+          </p>
+          <p className='artı'>
+            <i className="contact-icon">📞</i> Telefon: (538) 267 31 33
           </p>
           <p>
-            <i className="contact-icon">📞</i> Telefon: (555) 555 55 55
-          </p>
-          <p>
-            <i className="contact-icon">✉️</i> E-posta: info@kooperatifadi.org
+            <i className="contact-icon">✉️</i> E-posta: akadli2000@yahoo.com
           </p>
         </div>
 
@@ -61,8 +65,8 @@ const Footer: React.FC = () => {
       {/* Telif Hakkı ve Alt Bar */}
       <div className="footer-bottom">
         <p>
-          &copy; {currentYear} Kooperatif Adı. Tüm hakları saklıdır. | 
-          <a href="/gizlilik" className="bottom-link">Gizlilik Politikası</a>
+          &copy; {currentYear} İsterim Kooperatif. Tüm hakları saklıdır. | 
+          
         </p>
       </div>
     </footer>

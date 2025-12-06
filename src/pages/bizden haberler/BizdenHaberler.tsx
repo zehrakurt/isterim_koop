@@ -12,6 +12,29 @@ const BizdenHaberler: React.FC = () => {
       </div>
 
       <div className="news-grid">
+
+        {/* ------------------ ÇALIŞTAY HABERİ (ID: 3) ------------------ */}
+        <Link to="/bizden-haberler/3" className="news-card-link">
+          <article className="news-card">
+            <div className="news-card-image">
+              <img src={newsImage} alt="Kooperatifçilik Çalıştayı" />
+              <div className="news-card-category">Kooperatifçilik • Çalıştay</div>
+            </div>
+            <div className="news-card-content">
+              <time className="news-card-date">20-21 Aralık 2025</time>
+              <h2 className="news-card-title">
+                Kooperatifçiliğin Kalkınmada Rolü ve Yeni Nesil Kooperatifçilik Çalıştayı
+              </h2>
+              <p className="news-card-excerpt">
+                Çalıştay, kooperatiflerin kalkınmada rolü, yeni nesil modeller, 
+                yönetişim, dayanışma ve bilimsel çözüm arayışlarıyla Ankara’da düzenlenecektir.
+              </p>
+              <span className="news-card-read-more">Detayları Gör →</span>
+            </div>
+          </article>
+        </Link>
+
+        {/* ------------------ HABER 1 ------------------ */}
         <Link to="/bizden-haberler/1" className="news-card-link">
           <article className="news-card">
             <div className="news-card-image">
@@ -26,16 +49,15 @@ const BizdenHaberler: React.FC = () => {
                 İlk Adım Müzik ile TravelExpo Ankara'da Sahnedeyiz
               </h2>
               <p className="news-card-excerpt">
-                20-22 Kasım 2025 tarihleri arasında gerçekleşecek 8. Uluslararası
-                Turizm ve Seyahat Fuarı TravelExpo'da, İlk Adım Müzik Grubu ile
-                sahnede olacağız. Panel programında yer alan "Yaşamınızın Yeni Ritmine
-                İlk Adımla Başlayın" gösterisine tüm paydaşlarımız davetlidir.
+                20-22 Kasım 2025 tarihleri arasında gerçekleşecek 8. Uluslararası Turizm 
+                ve Seyahat Fuarı TravelExpo'da İlk Adım Müzik Grubu ile sahnede olacağız.
               </p>
               <span className="news-card-read-more">Detayları Gör →</span>
             </div>
           </article>
         </Link>
 
+        {/* ------------------ HABER 2 ------------------ */}
         <Link to="/bizden-haberler/2" className="news-card-link">
           <article className="news-card">
             <div className="news-card-image">
@@ -48,14 +70,14 @@ const BizdenHaberler: React.FC = () => {
                 TRAVELEXPO ANKARA 2025 – Standımız Hazır
               </h2>
               <p className="news-card-excerpt">
-                ATO Congresium'da 20-22 Kasım 2025 tarihinde düzenlenecek olan
-                TRAVELEXPO ANKARA 2025 – 8. Uluslararası Turizm ve Seyahat Fuarında
-                standımız olacaktır.
+                ATO Congresium'da düzenlenecek TRAVELEXPO ANKARA 2025 fuarında 
+                standımızla yer alacağız.
               </p>
               <span className="news-card-read-more">Detayları Gör →</span>
             </div>
           </article>
         </Link>
+
       </div>
     </div>
   );

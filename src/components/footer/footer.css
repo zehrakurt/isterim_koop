@@ -23,11 +23,13 @@
     padding: 10px 15px;
     min-width: 200px; /* Çok küçük cihazlarda bile okunabilirliği korumak için minimum genişlik */
 }
-
+.artı{
+    margin-bottom: 10px;
+}
 /* Başlıklar */
 .footer-section h3,
 .footer-section h4 {
-    color: #1abc9c; /* Kooperatif Teması (Turkuaz) */
+    color:#ecf0f1; 
     margin-top: 0;
     margin-bottom: 15px;
     font-size: 1.2em;

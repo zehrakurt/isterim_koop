@@ -1,7 +1,3 @@
-/* ========================================================================= */
-/* GENEL */
-/* ========================================================================= */
-
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -21,27 +17,20 @@ body {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
     border-radius: 12px;
     flex-grow: 1;
-    padding-bottom: 60px;
+    margin-bottom: 80px;
+    padding-bottom: 80px;
 }
 
-/* ========================================================================= */
-/* SECTIONS */
-/* ========================================================================= */
-
 .section {
-    padding: 40px 80px;
+    padding: 80px 80px; 
 }
 
 .section-title h2 {
     font-size: 2em;
     font-weight: bold;
     color: #444;
-    margin-bottom: 30px;
+    margin-bottom: 50px; 
 }
-
-/* ========================================================================= */
-/* HERO BÖLÜMÜ */
-/* ========================================================================= */
 
 .hero-banner {
     position: relative;
@@ -72,18 +61,18 @@ body {
 
 .hero-banner h1 {
     font-size: 3em;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     font-weight: 800;
 }
 
 .hero-banner p {
     font-size: 1.1em;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 
 .actions .btn {
     padding: 12px 25px;
-    margin: 0 10px;
+    margin: 0 15px;
     border-radius: 5px;
     text-decoration: none;
     font-weight: bold;
@@ -110,9 +99,58 @@ body {
     background-color: rgba(255, 255, 255, 0.2);
 }
 
-/* ========================================================================= */
-/* HAKKIMIZDA */
-/* ========================================================================= */
+.workshop-announcement {
+    background-color: #3498db;
+    padding: 30px 20px;
+    text-align: center;
+    border-radius: 10px;
+    margin: 40px auto;
+    max-width: 90%;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+    color: white;
+}
+
+.announcement-title {
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 15px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.announcement-theme {
+    font-size: 1.6rem;
+    color: #ecf0f1;
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+.announcement-details {
+    font-size: 1.1rem;
+    color: #ecf0f1;
+    line-height: 1.8;
+    margin-bottom: 35px;
+    font-weight: 300;
+}
+
+.btn-announcement {
+    display: inline-block;
+    background-color: #1abc9c; 
+    color: white;
+    padding: 15px 40px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-announcement:hover {
+    background-color: #16a085;
+    transform: translateY(-2px);
+}
 
 .about-us {
     text-align: center;
@@ -120,14 +158,14 @@ body {
 
 .about-description {
     max-width: 800px;
-    margin: 0 auto 50px;
+    margin: 0 auto 70px; 
     color: #666;
 }
 
 .icon-cards-container {
     display: flex;
     justify-content: space-between;
-    gap: 20px;
+    gap: 30px; 
 }
 
 .icon-card {
@@ -144,13 +182,13 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 auto 15px;
+    margin: 0 auto 25px; 
     font-size: 1.6em;
 }
 
-/* ========================================================================= */
-/* PROJELER - SLIDER (DÜZELTİLMİŞ) */
-/* ========================================================================= */
+.icon-card h3 {
+    margin-bottom: 12px; 
+}
 
 .projects {
     background-color: #f7f9fa;
@@ -160,53 +198,50 @@ body {
     position: relative;
     display: flex;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 30px; 
 }
 
 .slider {
     display: flex;
-    gap: 16px;
+    gap: 20px;
     overflow-x: auto;
     scroll-behavior: smooth;
     padding: 10px 0;
-
-    /* 1. Kaydırma Çubuğunu Gizle (Tüm Tarayıcılar) */
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
 }
 
-/* 1. Kaydırma Çubuğunu Gizle (Webkit Tabanlı Tarayıcılar: Chrome, Safari) */
 .slider::-webkit-scrollbar {
     display: none;
 }
 
 
 .project-card {
-    min-width: 230px;
+    min-width: 250px;
     background-color: #fff;
     border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.08);
-    padding: 18px;
+    padding: 25px 18px; 
     text-align: center;
 }
 
 .pdf-icon-large {
-    font-size: 55px;
+    font-size: 60px;
     color: #e63946;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .project-card h3 {
     margin: 0;
     padding: 5px 0;
-    font-size: 1.1em;
+    font-size: 1.2em;
     color: #333;
 }
 
 .project-card p {
-    font-size: 0.9em;
+    font-size: 0.95em;
     color: #666;
-    margin: 8px 0 12px;
+    margin: 10px 0 15px; 
     min-height: 40px;
 }
 
@@ -217,19 +252,17 @@ body {
     font-size: 0.9em;
 }
 
-/* 2 & 3. Slider Okları - Şeffaflık ve DIŞARIDA KONUMLANDIRMA */
 .slider-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     padding: 10px 12px;
-    /* Şeffaf arka plan */
     background: rgba(0, 0, 0, 0.1); 
     color: #333; 
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    z-index: 20; /* Kartların üzerine gelmesini sağlar */
+    z-index: 20; 
     font-size: 18px;
     transition: background 0.3s;
 }
@@ -238,7 +271,6 @@ body {
     background: rgba(0, 0, 0, 0.3);
 }
 
-/* Okları kartların dışına taşıma (negatif konumlandırma) */
 .slider-btn.left { 
     left: -60px; 
 }
@@ -246,15 +278,11 @@ body {
     right: -60px;
 }
 
-/* ========================================================================= */
-/* HİZMETLER */
-/* ========================================================================= */
-
 .service-grid {
     display: flex;
     justify-content: space-around;
-    margin-top: 30px;
-    gap: 20px;
+    margin-top: 50px; 
+    gap: 40px; 
 }
 
 .service-item {
@@ -263,26 +291,22 @@ body {
 }
 
 .service-icon-circle {
-    width: 55px;
-    height: 55px;
+    width: 65px;
+    height: 65px;
     border: 1px solid #ddd;
     color: #3b82f6;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.3em;
-    margin-bottom: 10px;
+    font-size: 1.5em;
+    margin: 0 auto 18px; 
 }
-
-/* ========================================================================= */
-/* FEEDBACK */
-/* ========================================================================= */
 
 .feedback-banner {
     background-color: #3b82f6;
     color: white;
-    padding: 40px 80px;
+    padding: 60px 80px; 
     text-align: center;
 }
 
@@ -294,31 +318,36 @@ body {
 .feedback-banner h3 {
     font-size: 1.8em;
     font-weight: 800;
-    margin-bottom: 10px;
+    margin-bottom: 25px; 
 }
 
-/* ========================================================================= */
-/* RESPONSIVE */
-/* ========================================================================= */
+.feedback-banner p {
+    margin-bottom: 18px; 
+}
+
+.feedback-banner .small-text {
+    margin-top: 30px; 
+    font-size: 0.9em;
+    opacity: 0.9;
+}
 
 @media (max-width: 1024px) {
     .section {
-        padding: 30px 40px;
+        padding: 60px 40px; 
     }
 }
 
 @media (max-width: 768px) {
 
     .section {
-        padding: 25px 20px;
+        padding: 40px 20px; 
     }
 
     .icon-cards-container {
         flex-direction: column;
-        gap: 25px;
+        gap: 30px; 
     }
 
-    /* Küçük ekranlarda okları kenara yapıştırıyoruz */
     .slider-btn.left { left: 0; }
     .slider-btn.right { right: 0; }
 
@@ -328,18 +357,18 @@ body {
 
     .service-grid {
         flex-direction: column;
-        gap: 20px;
+        gap: 30px; 
     }
 }
 
 @media (max-width: 480px) {
 
     .hero-banner {
-        height: 300px;
+        height: 350px;
     }
 
     .hero-banner h1 {
-        font-size: 2em;
+        font-size: 2.2em;
     }
 
     .actions .btn {
@@ -353,6 +382,22 @@ body {
     }
 
     .section-title h2 {
-        font-size: 1.5em;
+        font-size: 1.8em;
+    }
+
+    .workshop-announcement {
+        padding: 25px 15px;
+    }
+
+    .announcement-title {
+        font-size: 1.8rem;
+    }
+
+    .announcement-theme {
+        font-size: 1.3rem;
+    }
+
+    .announcement-details {
+        font-size: 1rem;
     }
 }

@@ -10,6 +10,100 @@ import haber4 from "../../assets/haber4.jpg";
 const HaberDetay: React.FC = () => {
   const { id } = useParams<{ id: string }>();
 
+  /* ------------------------- ÇALIŞTAY HABERİ (ID: 3) ------------------------ */
+  if (id === "3") {
+    return (
+      <div className="news-detail-page">
+        <Link to="/bizden-haberler" className="back-link">
+          ← Tüm Haberlere Dön
+        </Link>
+
+        <article className="news-detail-article">
+          <div className="news-detail-header">
+            <span className="news-detail-category">Kooperatifçilik • Çalıştay</span>
+            <h1>Kooperatifçiliğin Kalkınmada Rolü ve Yeni Nesil Kooperatifçilik Çalıştayı</h1>
+          </div>
+
+          <div className="news-detail-content">
+            <p>
+              Değer Üretim Paylaşım ve Eğitim Sosyal İşletme Kooperatifi kurumsal 
+              organizasyonu altında ve Kooperatifçilik Yılı kapsamında düzenlenmesi 
+              planlanan <strong>"Kooperatifçiliğin Kalkınmada Rolü ve Yeni Nesil Kooperatifçilik"</strong> 
+              temalı çalıştayın, <strong>20-21 Aralık 2025</strong> tarihlerinde Ankara’da 
+              gerçekleştirilmesi öngörülmektedir.
+            </p>
+
+            <p>
+              Hazırlık ve koordinasyon sürecine bağlı olarak çalıştayın 
+              <strong> 2026 yılına sarkması</strong> da ihtimal dahilindedir.
+            </p>
+
+            <p>
+              Çalıştayın hedef kitlesi; kooperatifler, yerel yönetimler, sivil toplum 
+              bileşenleri, kamu kuruluşları, bakanlık temsilcileri, akademik çevreler 
+              ve gençlerden oluşmaktadır.
+            </p>
+
+            <h3>Amaçlar</h3>
+            <ul>
+              <li>Kooperatifçilik bilincinin sivil toplum bileşenleri arasında gelişimine katkı sağlamak</li>
+              <li>Kooperatifçiliğin ülkemizde gelişimine destek için yeni çözüm önerileri oluşturmak</li>
+              <li>Katılımcılar arasında yeni işbirliği ağları geliştirmek, dayanışmayı güçlendirmek</li>
+              <li>Bilimsel bir yaklaşım ile sorunların çözümünde işbirliği alanlarını belirlemek</li>
+            </ul>
+
+            <h3>Beklenen Çıktılar</h3>
+            <p>
+              Kooperatifçiliğin güncel sorunları ve çözüm yolları konusunda kamuoyunda 
+              farkındalık yaratılması hedeflenmektedir.
+            </p>
+
+            <h3>Muhtemel Paydaşlar</h3>
+            <ul>
+              <li>Kadın kooperatifleri</li>
+              <li>Sosyal kooperatifler</li>
+              <li>Yerel yönetimler</li>
+              <li>Üniversiteler</li>
+              <li>Ankara Kalkınma Ajansı</li>
+              <li>İlgili bakanlıklar</li>
+              <li>Türk Kooperatifçilik Kurumu</li>
+            </ul>
+
+            <h3>Ele Alınması Muhtemel Konu Başlıkları</h3>
+            <ul>
+              <li>Kooperatifçiliğin kalkınmadaki rolü</li>
+              <li>Yeni nesil kooperatifçilik modelleri</li>
+              <li>Kooperatiflerde yönetişim ve şeffaflık</li>
+              <li>E-ticaret, dijital dönüşüm ve kooperatifler</li>
+              <li>Sosyal kooperatifçilik uygulamaları</li>
+              <li>Girişimcilikte kooperatiflerin yeri</li>
+            </ul>
+          </div>
+
+          <div className="news-details">
+            <div className="detail-row">
+              <span>Etkinlik</span>
+              <strong>Kooperatifçilik Çalıştayı</strong>
+            </div>
+            <div className="detail-row">
+              <span>Tarih</span>
+              <strong>20-21 Aralık 2025 (Gerekirse 2026’ya sarkabilir)</strong>
+            </div>
+            <div className="detail-row">
+              <span>Yer</span>
+              <strong>Ankara</strong>
+            </div>
+            <div className="contact-info">
+              <h3>İrtibat</h3>
+              <p><strong>Organizasyon Komitesi</strong></p>
+            </div>
+          </div>
+        </article>
+      </div>
+    );
+  }
+
+  /* ------------------------------ HABER ID: 1 ------------------------------ */
   if (id === "1") {
     return (
       <div className="news-detail-page">
@@ -29,8 +123,7 @@ const HaberDetay: React.FC = () => {
             <p>
               20-22 Kasım 2025 tarihleri arasında gerçekleşecek 8. Uluslararası
               Turizm ve Seyahat Fuarı TravelExpo'da, İlk Adım Müzik Grubu ile
-              sahnede olacağız. Panel programında yer alan "Yaşamınızın Yeni Ritmine
-              İlk Adımla Başlayın" gösterisine tüm paydaşlarımız davetlidir.
+              sahnede olacağız.
             </p>
           </div>
 
@@ -45,30 +138,19 @@ const HaberDetay: React.FC = () => {
             </div>
             <div className="detail-row">
               <span>Tarih</span>
-              <strong>20 Kasım 2025, Perşembe • 18.00</strong>
+              <strong>20 Kasım 2025</strong>
             </div>
             <div className="detail-row">
               <span>Yer</span>
               <strong>ATO Congresium</strong>
             </div>
-            <div className="detail-row">
-              <span>Gösteri</span>
-              <strong>İlk Adım Müzik Grubu</strong>
-            </div>
-            <a
-              className="news-link"
-              href="https://www.instagram.com/ilkadimmuzik?igsh=MTJtbmd0MXR4N3pnZg=="
-              target="_blank"
-              rel="noreferrer"
-            >
-              Instagram'da İlk Adım Müzik
-            </a>
           </div>
         </article>
       </div>
     );
   }
 
+  /* ------------------------------ HABER ID: 2 ------------------------------ */
   if (id === "2") {
     return (
       <div className="news-detail-page">
@@ -84,30 +166,12 @@ const HaberDetay: React.FC = () => {
 
           <div className="news-detail-content">
             <p>
-              ATO Congresium'da 20-22 Kasım 2025 tarihinde düzenlenecek olan{" "}
-              <strong>TRAVELEXPO ANKARA 2025 – 8. Uluslararası Turizm ve Seyahat Fuarı</strong>{" "}
-              standımız olacaktır.
-            </p>
-            <p>
-              Bu önemli fuarda, kadın kooperatiflerinin ve kadın üreticilerin ürünlerini
-              tanıtma fırsatı bulacağız. Standımızda yerel, coğrafi işaretli ürünler,
-              el sanatları ve otantik eşyalarımızı sergileyeceğiz.
-            </p>
-            <p>
-              Tüm paydaşlarımızı ve ziyaretçilerimizi standımıza bekliyoruz.
+              20-22 Kasım 2025 tarihlerinde düzenlenecek olan TRAVELEXPO ANKARA 
+              2025 fuarında standımızla yer alacağız.
             </p>
           </div>
 
           <div className="news-detail-images-grid">
-            <div className="news-detail-image-item">
-              <img src={haber1} alt="TRAVELEXPO ANKARA 2025 Standımız 1" />
-            </div>
-            <div className="news-detail-image-item">
-              <img src={haber2} alt="TRAVELEXPO ANKARA 2025 Standımız 2" />
-            </div>
-            <div className="news-detail-image-item">
-              <img src={haber3} alt="TRAVELEXPO ANKARA 2025 Standımız 3" />
-            </div>
             <div className="news-detail-image-item">
               <img src={haber4} alt="TRAVELEXPO ANKARA 2025 Standımız 4" />
             </div>
@@ -125,15 +189,6 @@ const HaberDetay: React.FC = () => {
             <div className="detail-row">
               <span>Yer</span>
               <strong>ATO Congresium</strong>
-            </div>
-            <div className="contact-info">
-              <h3>İrtibat</h3>
-              <p>
-                <strong>Yiğit Köymen</strong>
-              </p>
-              <p>
-                <a href="tel:05382673133">05382673133</a>
-              </p>
             </div>
           </div>
         </article>
@@ -154,4 +209,3 @@ const HaberDetay: React.FC = () => {
 };
 
 export default HaberDetay;
-
