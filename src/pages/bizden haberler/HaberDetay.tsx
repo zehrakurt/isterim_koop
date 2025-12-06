@@ -2,9 +2,6 @@ import React from "react";
 import { useParams, Link } from "react-router-dom";
 import "./HaberDetay.css";
 import newsImage from "../../assets/bizden haberler.jpg";
-import haber1 from "../../assets/haber1.jpg";
-import haber2 from "../../assets/haber2.jpg";
-import haber3 from "../../assets/haber3.jpg";
 import haber4 from "../../assets/haber4.jpg";
 
 const HaberDetay: React.FC = () => {

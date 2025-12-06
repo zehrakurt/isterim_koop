@@ -14,7 +14,7 @@ import heroImage from './assets/slider1.jpg';
 
 // İkonlar
 import { 
-    FaHandshake, FaUsers, FaLeaf, FaLightbulb, 
+    FaHandshake, FaUsers, FaLightbulb, 
     FaBox, FaGraduationCap, FaUsersCog, FaCheckCircle,
     FaFilePdf, FaChevronLeft, FaChevronRight
 } from 'react-icons/fa';

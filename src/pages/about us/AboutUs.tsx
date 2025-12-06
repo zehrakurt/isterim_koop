@@ -179,7 +179,13 @@ const renderVisionText = (text: string): React.ReactNode[] => {
         if (currentParagraph.length > 0) {
             const content = currentParagraph.join('<br/>').trim();
             if (content) {
-                const isFirstContent = !elements.some(e => typeof e !== 'string' && 'type' in e && (e.type === 'h3' || e.type === 'h4')) && !hasRenderedFirstParagraph; // Type check güncellendi
+               const isFirstContent = 
+    !elements.some(e => 
+      React.isValidElement(e) && 
+      (e.type === 'h3' || e.type === 'h4')
+    ) 
+    && !hasRenderedFirstParagraph;
+  
                 elements.push(
                     <p 
                         key={keyIndex++} 
