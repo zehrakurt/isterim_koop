@@ -126,7 +126,7 @@ const Home2: React.FC = () => {
                 </div>
 
                 <div className="service-grid">
-                    <ServiceCard Icon={FaBox} title="Ortak Ürün Dağıtımı" />
+                    <ServiceCard Icon={FaBox} title="Tarihi turistlik mekanlara,doğal ve organik tarım çiftliklerine gezi düzenlemek " />
                     <ServiceCard Icon={FaGraduationCap} title="Eğitim ve Atölyeler" />
                     <ServiceCard Icon={FaUsersCog} title="Danışmanlık" />
                     <ServiceCard Icon={FaCheckCircle} title="Proje ve Destek Yönetimi" />

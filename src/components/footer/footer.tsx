@@ -39,7 +39,7 @@ const Footer: React.FC = () => {
           <p className='artı'>
             <i className="contact-icon">📍</i> İsterim Kooperatif.
 
-Hacettepe mah. divan sok. no:13/1
+Hacettepe mah. Divan sok. no:13/1
 
 Altındag-Ankara
           </p>
