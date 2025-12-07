@@ -1,5 +1,7 @@
 import React from 'react';
 import './footer.css';
+import { Link } from "react-router-dom";
+
 // Sosyal medya ikonları için buraya bir kütüphane (örneğin react-icons) veya SVG'ler eklenebilir.
 // Basitlik adına burada sadece metin yer tutucuları kullanılmıştır.
 
@@ -22,13 +24,13 @@ const Footer: React.FC = () => {
         <div className="footer-section footer-links">
   <h4>Hızlı Bağlantılar</h4>
   <ul>
-    <li><a href="/">Anasayfa</a></li>
-    <li><a href="/about-us">Biz Kimiz</a></li>
-    <li><a href="/misyonumuz">Misyonumuz</a></li>
-    <li><a href="/vizyonumuz">Vizyonumuz</a></li>
-    <li><a href="/akademi-1">Akademi</a></li>
-    <li><a href="/bizden-haberler">Bizden Haberler</a></li>
-    <li><a href="/iletisim">İletişim</a></li>
+  <li><Link to="/">Anasayfa</Link></li>
+            <li><Link to="/about-us">Biz Kimiz</Link></li>
+            <li><Link to="/misyonumuz">Misyonumuz</Link></li>
+            <li><Link to="/vizyonumuz">Vizyonumuz</Link></li>
+            <li><Link to="/akademi-1">Akademi</Link></li>
+            <li><Link to="/bizden-haberler">Bizden Haberler</Link></li>
+            <li><Link to="/iletisim">İletişim</Link></li>
   </ul>
 </div>
         {/* İletişim */}
