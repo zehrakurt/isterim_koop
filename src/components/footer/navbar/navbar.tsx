@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./navbar.css";
+import logo from "../../../assets/logo2.jpg";
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,9 +33,11 @@ const Navbar: React.FC = () => {
 
   return (
     <header className="navbar">
-      <div className="logo">
-        <Link to="/">Logo</Link>
-      </div>
+     <div className="logo">
+  <Link to="/">
+    <img src={logo} alt="Logo" />
+  </Link>
+</div>
 
       <nav className={`nav-links ${isOpen ? "open" : ""}`}>
 

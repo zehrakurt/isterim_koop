@@ -31,19 +31,26 @@
   }
   
   .logo {
-    padding: 16px 0;
+    padding: 12px 0;
     z-index: 1001;
+    display: flex;
+    align-items: center;
   }
   
   .logo img {
-    height: 52px;
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.05));
+    height: 64px; /* 🔥 52 → 64 */
+    width: auto;
+    transition: 
+      transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+      filter 0.4s ease;
+    filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.15));
   }
   
   .logo:hover img {
-    transform: scale(1.05) rotate(-2deg);
+    transform: scale(1.08) rotate(-1deg);
+    filter: drop-shadow(0 10px 24px rgba(0, 102, 204, 0.35));
   }
+  
   
   /* MENÜ LİNKLERİ (DESKTOP) */
   .nav-links {
