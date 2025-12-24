@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import './home2.css';
-
+import { Link } from "react-router-dom";
 // PDF Dosyaları
 import proje1 from './assets/proje1.pdf';
 import proje2 from './assets/proje2.pdf';
@@ -43,8 +43,12 @@ const Home2: React.FC = () => {
                     <h1>İsterim Kooperatif</h1>
                     <p>Değer Üretim Paylaşım ve Eğitim Sosyal İşletme Kooperatifi.</p>
                     <div className="actions">
-                        <a href="/akademi-1" className="btn btn-primary">Akademi</a>
-                        <a href="/iletisim" className="btn btn-secondary">İletişim</a>
+                    <Link to="/akademi-1" className="btn btn-primary">
+    Akademi
+</Link>
+<Link to="/iletisim" className="btn btn-secondary">
+    İletişim
+</Link>
                     </div>
                 </div>
             </header>
