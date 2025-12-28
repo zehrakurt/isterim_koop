@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./BizdenHaberler.css";
 import newsImage from "../../assets/bizden haberler.jpg";
+import newsImagetwo from "../../assets/12.jpeg";
 import haber4 from "../../assets/haber4.jpg";
 
 const BizdenHaberler: React.FC = () => {
@@ -17,7 +18,7 @@ const BizdenHaberler: React.FC = () => {
         <Link to="/bizden-haberler/3" className="news-card-link">
           <article className="news-card">
             <div className="news-card-image">
-              <img src={newsImage} alt="Kooperatifçilik Çalıştayı" />
+              <img src={newsImagetwo} alt="Kooperatifçilik Çalıştayı" />
               <div className="news-card-category">Kooperatifçilik • Çalıştay</div>
             </div>
             <div className="news-card-content">
