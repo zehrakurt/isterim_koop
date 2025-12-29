@@ -18,19 +18,20 @@ const pdfDocuments = [
   },
   {
     title: "SOSYAL KAPASİTE GELİŞTİRME PROGRAMI",
-    description: "Etrafınızda her şeyi para ve başarıya bağlayan birsistem var. Oysa değerli olan doğru bir amaç uğrunaharcanan çabalardır..",
+    description:
+      "Etrafınızda her şeyi para ve başarıya bağlayan bir sistem var. Oysa değerli olan doğru bir amaç uğruna harcanan çabalardır.",
     url: akademi2,
     color: "blue",
   },
   {
-    title: "BİREYSEL SOSYAL KAPASİTEGELİŞTİRME PROGRAMI",
-    description: "AMACIMIZ CEHALETLE VE HERTÜRLÜSÜYLE TOPYEKÜN SAVAŞTIR.",
+    title: "BİREYSEL SOSYAL KAPASİTE GELİŞTİRME PROGRAMI",
+    description: "Amacımız cehaletle ve her türlüsüyle topyekûn savaştır.",
     url: akademi3,
     color: "green",
   },
   {
-    title: "KURUMSAL SOSYAL KAPASİTEGELİŞTİRME PROGRAMI",
-    description: "Sosyal Girişimci yapılar olarak değer yaratmalarını ...",
+    title: "KURUMSAL SOSYAL KAPASİTE GELİŞTİRME PROGRAMI",
+    description: "Sosyal girişimci yapılar olarak değer yaratmalarını hedefler.",
     url: akademi4,
     color: "yellow",
   },
@@ -52,15 +53,18 @@ const Academy = () => {
         </div>
       </section>
 
-      {/* PDF Kartları */}
+      {/* 📄 PDF Kartları — ARTIK ÜSTTE */}
       <section className="academy-main">
         <div className="pdf-section">
           <div className="title-container">
-            <h2 className="section-title">Program Dokümanları ve Kılavuzlar</h2>
+            <h2 className="section-title">
+              Program Dokümanları ve Kılavuzlar
+            </h2>
           </div>
 
           <p className="section-subtitle">
-            Aşağıda akademimizin dört temel programına ait PDF kılavuzları bulabilirsiniz.
+            Aşağıda akademimizin dört temel programına ait PDF kılavuzları
+            bulabilirsiniz.
           </p>
 
           <div className="pdf-grid">
@@ -71,7 +75,6 @@ const Academy = () => {
                 <h4 className="pdf-title">{doc.title}</h4>
                 <p className="pdf-desc">{doc.description}</p>
 
-                {/* PDF ikon */}
                 <div className="pdf-icon-wrapper">
                   <img src={pdfIcon} alt="PDF icon" className="pdf-svg" />
                 </div>
@@ -87,6 +90,22 @@ const Academy = () => {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* 🎵 YOUTUBE CANLI MÜZİK — ARTIK ALTTA */}
+      <section className="academy-music">
+        <h3>Akademi Yayını</h3>
+        <p>Okurken veya incelerken arka planda dinleyebilirsiniz.</p>
+
+        <div className="video-wrapper">
+          <iframe
+            src="https://www.youtube.com/embed/wRosDaswx4g"
+            title="İsterim Akademi Canlı Yayın"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
         </div>
       </section>
     </div>
