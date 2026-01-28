@@ -3,9 +3,118 @@ import { useParams, Link } from "react-router-dom";
 import "./HaberDetay.css";
 import newsImage from "../../assets/bizden haberler.jpg";
 import haber4 from "../../assets/haber4.jpg";
+import ziyaretImage from "../../assets/2.jpeg";
+import yazarImage from "../../assets/1.jpeg";
 
 const HaberDetay: React.FC = () => {
   const { id } = useParams<{ id: string }>();
+
+  /* ------------------ YAZAR MURAT HAYDAROĞLU ZİYARETİ (ID: 5) ------------------ */
+  if (id === "5") {
+    return (
+      <div className="news-detail-page">
+        <Link to="/bizden-haberler" className="back-link">
+          ← Tüm Haberlere Dön
+        </Link>
+
+        <article className="news-detail-article">
+          <div className="news-detail-header">
+            <span className="news-detail-category">Kültür • Edebiyat</span>
+            <h1>Yazar-Şair Murat Haydaroğlu Ofisimizde</h1>
+          </div>
+
+          <div className="news-detail-content">
+            <p>
+              Yazar-şair <strong>Murat Haydaroğlu</strong> ofisimizi ziyaret ederek yeni kitabını
+              ekibimize hediye etti. Ziyaret sırasında edebiyat çalışmaları, kültür-sanat projeleri
+              ve kooperatifimizin yürüttüğü faaliyetler üzerine keyifli bir sohbet gerçekleştirdik.
+            </p>
+            <p>
+              Kendilerine nazik ziyaretleri ve kitap hediyeleri için teşekkür ediyor, birlikte
+              yürütebileceğimiz kültür-sanat odaklı projeler için heyecan duyuyoruz.
+            </p>
+          </div>
+
+          <div className="news-detail-image">
+            <img src={yazarImage} alt="Yazar Şair Murat Haydaroğlu ziyareti" />
+          </div>
+
+          <div className="news-details">
+            <div className="detail-row">
+              <span>Etkinlik</span>
+              <strong>Ofis Ziyareti</strong>
+            </div>
+            <div className="detail-row">
+              <span>Tarih</span>
+              <strong>28 Ocak 2026</strong>
+            </div>
+            <div className="detail-row">
+              <span>Yer</span>
+              <strong>İSTERİM Kooperatif Ofisi</strong>
+            </div>
+            <div className="detail-row">
+              <span>Konuk</span>
+              <strong>Yazar-Şair Murat Haydaroğlu</strong>
+            </div>
+          </div>
+        </article>
+      </div>
+    );
+  }
+
+  /* ------------------ VALİ YARDIMCISI ZİYARETİ (ID: 4) ------------------ */
+  if (id === "4") {
+    return (
+      <div className="news-detail-page">
+        <Link to="/bizden-haberler" className="back-link">
+          ← Tüm Haberlere Dön
+        </Link>
+
+        <article className="news-detail-article">
+          <div className="news-detail-header">
+            <span className="news-detail-category">Protokol Ziyareti</span>
+            <h1>Vali Yardımcısı Dr. Ayhan Özkan'dan Ziyaret</h1>
+          </div>
+
+          <div className="news-detail-content">
+            <p>
+              Vali Yardımcısı <strong>Dr. Ayhan Özkan</strong> bugün kooperatifimizi
+              ziyaret ederek yürüttüğümüz projeler ve iş birlikleri hakkında bilgi aldı.
+              Ziyarette toplumsal fayda, kadın kooperatiflerine destek ve yerel kalkınma
+              başlıklarında görüş alışverişi yapıldı.
+            </p>
+            <p>
+              Misafirimizle birlikte gelecekte gerçekleştirebileceğimiz ortak çalışmalar
+              üzerine değerlendirmelerde bulunduk ve planlanan etkinliklerimizi paylaştık.
+            </p>
+          </div>
+
+          <div className="news-detail-image">
+            <img src={ziyaretImage} alt="Vali Yardımcısı Dr. Ayhan Özkan ziyareti" />
+          </div>
+
+          <div className="news-details">
+            <div className="detail-row">
+              <span>Etkinlik</span>
+              <strong>Protokol Ziyareti</strong>
+            </div>
+            <div className="detail-row">
+              <span>Tarih</span>
+              <strong>28 Ocak 2026</strong>
+            </div>
+            <div className="detail-row">
+              <span>Yer</span>
+              <strong>İSTERİM Kooperatif</strong>
+            </div>
+            <div className="detail-row">
+              <span>Katılımcı</span>
+              <strong>Vali Yardımcısı Dr. Ayhan Özkan</strong>
+            </div>
+          </div>
+        </article>
+      </div>
+    );
+  }
 
   /* ------------------------- ÇALIŞTAY HABERİ (ID: 3) ------------------------ */
   if (id === "3") {

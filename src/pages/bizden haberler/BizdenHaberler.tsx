@@ -4,6 +4,8 @@ import "./BizdenHaberler.css";
 import newsImage from "../../assets/bizden haberler.jpg";
 import newsImagetwo from "../../assets/12.jpeg";
 import haber4 from "../../assets/haber4.jpg";
+import ziyaretImage from "../../assets/2.jpeg";
+import yazarImage from "../../assets/1.jpeg";
 
 const BizdenHaberler: React.FC = () => {
   return (
@@ -13,6 +15,51 @@ const BizdenHaberler: React.FC = () => {
       </div>
 
       <div className="news-grid">
+
+        {/* ------------------ YAZAR MURAT HAYDAROĞLU ZİYARETİ (ID: 5) ------------------ */}
+        <Link to="/bizden-haberler/5" className="news-card-link">
+          <article className="news-card">
+            <div className="news-card-image">
+              <img src={yazarImage} alt="Yazar Şair Murat Haydaroğlu ziyareti" />
+              <div className="news-card-category">Kültür • Edebiyat</div>
+            </div>
+            <div className="news-card-content">
+              <time className="news-card-date">28 Ocak 2026</time>
+              <h2 className="news-card-title">
+                Yazar-Şair Murat Haydaroğlu Ofisimizde
+              </h2>
+              <p className="news-card-excerpt">
+                Yazar-şair Murat Haydaroğlu ofisimizi ziyaret ederek yeni kitabını ekibimize hediye etti.
+              </p>
+              <span className="news-card-read-more">Detayları Gör →</span>
+            </div>
+          </article>
+        </Link>
+
+        {/* ------------------ VALİ YARDIMCISI ZİYARETİ (ID: 4) ------------------ */}
+        <Link to="/bizden-haberler/4" className="news-card-link">
+          <article className="news-card">
+            <div className="news-card-image">
+              <img
+                className="news-card-image--top"
+                src={ziyaretImage}
+                alt="Vali Yardımcısı Dr. Ayhan Özkan ziyareti"
+              />
+              <div className="news-card-category">Protokol Ziyareti</div>
+            </div>
+            <div className="news-card-content">
+              <time className="news-card-date">28 Ocak 2026</time>
+              <h2 className="news-card-title">
+                Vali Yardımcısı Dr. Ayhan Özkan'dan Ziyaret
+              </h2>
+              <p className="news-card-excerpt">
+                Vali Yardımcısı Dr. Ayhan Özkan bugün kooperatifimizi ziyaret ederek
+                çalışmalarımız hakkında bilgi aldı.
+              </p>
+              <span className="news-card-read-more">Detayları Gör →</span>
+            </div>
+          </article>
+        </Link>
 
         {/* ------------------ ÇALIŞTAY HABERİ (ID: 3) ------------------ */}
         <Link to="/bizden-haberler/3" className="news-card-link">
