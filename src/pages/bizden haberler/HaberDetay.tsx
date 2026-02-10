@@ -5,7 +5,7 @@ import newsImage from "../../assets/bizden haberler.jpg";
 import haber4 from "../../assets/haber4.jpg";
 import ziyaretImage from "../../assets/2.jpeg";
 import yazarImage from "../../assets/1.jpeg";
-
+import sağlık2 from "../../assets/sağlık2.jpeg";
 const HaberDetay: React.FC = () => {
   const { id } = useParams<{ id: string }>();
 
@@ -255,6 +255,53 @@ const HaberDetay: React.FC = () => {
       </div>
     );
   }
+/* ------------------ SAĞLIK MÜDÜRLÜĞÜ ZİYARETİ (ID: 6) ------------------ */
+if (id === "6") {
+  return (
+    <div className="news-detail-page">
+      <Link to="/bizden-haberler" className="back-link">
+        ← Tüm Haberlere Dön
+      </Link>
+
+      <article className="news-detail-article">
+        <div className="news-detail-header">
+          <span className="news-detail-category">Kurumsal Ziyaret</span>
+          <h1>
+            T.C Sağlık Bakanlığı Ankara İl Sağlık Müdürlüğü'ne Ziyaret
+          </h1>
+        </div>
+
+        <div className="news-detail-content">
+          <p>
+            T.C Sağlık Bakanlığı Ankara İl Sağlık Müdürlüğü'nü ziyaret ederek
+            yürüttüğümüz projeler ve olası iş birlikleri üzerine verimli
+            bir görüşme gerçekleştirdik.
+          </p>
+
+          <p>
+            Ziyaret kapsamında toplum sağlığı, sosyal projeler ve
+            kurumlar arası iş birliği olanakları ele alındı.
+          </p>
+        </div>
+
+        <div className="news-detail-image">
+          <img src={sağlık2} alt="Ankara İl Sağlık Müdürlüğü ziyareti" />
+        </div>
+
+        <div className="news-details">
+          <div className="detail-row">
+            <span>Etkinlik</span>
+            <strong>Kurumsal Ziyaret</strong>
+          </div>
+          <div className="detail-row">
+            <span>Yer</span>
+            <strong>Ankara İl Sağlık Müdürlüğü</strong>
+          </div>
+        </div>
+      </article>
+    </div>
+  );
+}
 
   /* ------------------------------ HABER ID: 2 ------------------------------ */
   if (id === "2") {
@@ -299,6 +346,7 @@ const HaberDetay: React.FC = () => {
           </div>
         </article>
       </div>
+      
     );
   }
 

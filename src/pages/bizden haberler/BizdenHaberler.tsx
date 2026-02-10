@@ -6,7 +6,7 @@ import newsImagetwo from "../../assets/12.jpeg";
 import haber4 from "../../assets/haber4.jpg";
 import ziyaretImage from "../../assets/2.jpeg";
 import yazarImage from "../../assets/1.jpeg";
-
+import sağlık from "../../assets/sağlık.jpeg";
 const BizdenHaberler: React.FC = () => {
   return (
     <div className="news-page">
@@ -15,6 +15,27 @@ const BizdenHaberler: React.FC = () => {
       </div>
 
       <div className="news-grid">
+        {/* ------------------ SAĞLIK MÜDÜRLÜĞÜ ZİYARETİ (ID: 6) ------------------ */}
+<Link to="/bizden-haberler/6" className="news-card-link">
+  <article className="news-card">
+    <div className="news-card-image">
+      <img src={sağlık} alt="Ankara İl Sağlık Müdürlüğü ziyareti" />
+      <div className="news-card-category">Kurumsal Ziyaret</div>
+    </div>
+    <div className="news-card-content">
+      <time className="news-card-date">Tarih Yaz</time>
+      <h2 className="news-card-title">
+        T.C Sağlık Bakanlığı Ankara İl Sağlık Müdürlüğü Ziyareti
+      </h2>
+      <p className="news-card-excerpt">
+        Ankara İl Sağlık Müdürlüğü ile gerçekleştirdiğimiz ziyarette
+        iş birliği ve projeler üzerine görüş alışverişi yapıldı.
+      </p>
+      <span className="news-card-read-more">Detayları Gör →</span>
+    </div>
+  </article>
+</Link>
+
 
         {/* ------------------ YAZAR MURAT HAYDAROĞLU ZİYARETİ (ID: 5) ------------------ */}
         <Link to="/bizden-haberler/5" className="news-card-link">
