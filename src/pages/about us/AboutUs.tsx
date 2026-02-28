@@ -137,35 +137,29 @@ const members: MemberData[] = [
 ];
 
 /* GÜNCELLENMİŞ VİZYON METNİ */
-const ISTERIM_VISION_TEXT = `SS İSTERİM Değer Üretim Paylaşım ve Eğitim Sosyal İşletme Kooperatifi.
-(SS İSTERİM Değer Yaratma, Paylaşım ve Eğitim Sosyal İşletme Kooperatifi)
+const ISTERIM_VISION_TEXT = `Merhaba…
+Almanya’da hava gibi, insanın içi de bazen öyle oluyor değil mi? Bir açık, bir yağmurlu; bir sıcak, bir soğuk bir karlı diye “idare ediyoruz” dediğin yerde aslında koca bir hayat var.
 
-21 Kasım 2023 tarihinde Ankara'da kurulan özel bir Sosyal İşletme Kooperatifiyiz.
+“İsterim” kelimesi üzerine biraz düşünelim.
 
-Önceliğimiz, sosyal inovasyonlar, sosyal girişimcilik ve modüler akademik çalışmalar yoluyla kurumların, firmaların, STK'ların, belediyelerin ve yerel yönetimlerin sosyal kapasitelerini geliştirmektir.
+“İsterim” ilk bakışta bencil gibi durabilir. Çünkü merkezde “ben” vardır. Ama aslında her “isterim” bencillik değildir. Bazen “isterim” demek, varlığını kabul etmektir.
 
-Sağduyu geliştirmenin özü olan sürdürülebilir kalkınmaya odaklanarak, karmaşık yaşamın yeni ihtiyaçlarını karşılayacak yeni örgütlenme biçimleri tasarlamaya çalışıyoruz ve bu, şehir yaşam kalitemizi artırmamıza yardımcı olacaktır.
+• Çocukken “isterim” diyebilmek özgürlüktür.
+• Yetişkinken “isterim” diyebilmek cesarettir.
+• Yanlış yerde “isterim” demek ise açgözlülüktür.
 
-Tematik araştırma alanlarımız:
+Bencillik, başkasını yok sayarak istemektir.
+Sağlıklı bir istek ise hem kendini hem karşındakini görerek istemektir.
 
-İnsan ve Doğa
-Bilim ve Teknoloji
-Kültür ve Sanat
-Eğitim ve Tasarım
-Sağlık, Spor ve Sosyal Güvenlik
-Hukuk
-Finans
-Proje Yönetimi Kültür ve Girişimcilik
-Gelecek ve Güvenlik
+“İsterim” kelimesinin altında bazen eksiklik yatar. Bazen korku. Bazen de hayatta tutunma çabası. İnsan pahalı bir hayatta yaşıyorsa, geçim zorsa, güvensizlik varsa; “isterim” daha keskin çıkar ağızdan. Çünkü insan elinden kayıp giden şeyi tutmaya çalışır.
 
-Sosyal kooperatifimiz Ankara Kent Konseyi üyesidir. İlgi alanlarımız şunlardır:
-Kırsal kalkınma
-Kültürel diploma
-Sosyal inovasyon
+Dolandırıcılık ise başka bir yerden gelir. O, “isterim” değil; “ne olursa olsun benim olsun” demektir. Vicdanı devre dışı bırakır. Başkasının hayat pahalılığını fırsata çevirir. İşte orada istek değil, istismar vardır.
 
-2026 PROJELERİ
+Zor zamanlarda doğru iş yapmak gerçekten kıymetlidir. İnsanların geçim derdi varken dürüst kalmak daha da değerlidir. Çünkü kolay para çağında temiz kalmak emek ister.
 
-2026 yılı için yıllık projelerimizi programlıyoruz. Bilgelik Vadisi ve Bilgelik Treni. Amacımız, sivil toplum aktörlerini bir araya getirerek sosyal kuruluşların sosyal kapasitelerini geliştirmektir.`;
+Belki de mesele şu:
+“İsterim” demek insanidir.
+Ama “sadece ben isterim” demek tehlikelidir.`;
 
 // GÜNCELLENMİŞ renderVisionText fonksiyonu: React.ReactNode[] olarak tip güncellendi.
 const renderVisionText = (text: string): React.ReactNode[] => {
