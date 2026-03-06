@@ -7,6 +7,7 @@ import haber4 from "../../assets/haber4.jpg";
 import ziyaretImage from "../../assets/2.jpeg";
 import yazarImage from "../../assets/1.jpeg";
 import sağlık from "../../assets/sağlık.jpeg";
+import martEtkinlik from "../../assets/8mart.jpg";
 const BizdenHaberler: React.FC = () => {
   return (
     <div className="news-page">
@@ -15,6 +16,27 @@ const BizdenHaberler: React.FC = () => {
       </div>
 
       <div className="news-grid">
+        {/* ------------------ 8 MART KADINI ANLAMA VE ANMA GÜNÜ ETKİNLİĞİ (ID: 7) ------------------ */}
+        <Link to="/bizden-haberler/7" className="news-card-link">
+          <article className="news-card">
+            <div className="news-card-image">
+              <img src={martEtkinlik} alt="8 Mart 2026 Kadını Anlama ve Anma Günü Etkinliği" />
+              <div className="news-card-category">Etkinlik • Panel</div>
+            </div>
+            <div className="news-card-content">
+              <time className="news-card-date">8 Mart 2026</time>
+              <h2 className="news-card-title">
+                8 Mart 2026 Kadını Anlama ve Anma Günü Etkinliği
+              </h2>
+              <p className="news-card-excerpt">
+                SS İsterim Değer Üretim Paylaşım ve Eğitim Sosyal İşletme Kooperatifi ve Mimoza
+                Kadınları Derneği'nin katkılarıyla "Kadının Dünü, Bugünü, Yarını" paneli düzenleniyor.
+              </p>
+              <span className="news-card-read-more">Detayları Gör →</span>
+            </div>
+          </article>
+        </Link>
+
         {/* ------------------ SAĞLIK MÜDÜRLÜĞÜ ZİYARETİ (ID: 6) ------------------ */}
 <Link to="/bizden-haberler/6" className="news-card-link">
   <article className="news-card">

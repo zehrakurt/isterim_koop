@@ -6,8 +6,100 @@ import haber4 from "../../assets/haber4.jpg";
 import ziyaretImage from "../../assets/2.jpeg";
 import yazarImage from "../../assets/1.jpeg";
 import sağlık2 from "../../assets/sağlık2.jpeg";
+import martEtkinlik from "../../assets/8mart.jpg";
 const HaberDetay: React.FC = () => {
   const { id } = useParams<{ id: string }>();
+
+  /* ------------------ 8 MART KADINI ANLAMA VE ANMA GÜNÜ ETKİNLİĞİ (ID: 7) ------------------ */
+  if (id === "7") {
+    return (
+      <div className="news-detail-page">
+        <Link to="/bizden-haberler" className="back-link">
+          ← Tüm Haberlere Dön
+        </Link>
+
+        <article className="news-detail-article">
+          <div className="news-detail-header">
+            <span className="news-detail-category">Etkinlik • Panel</span>
+            <h1>8 Mart 2026 Kadını Anlama ve Anma Günü Etkinliği</h1>
+          </div>
+
+          <div className="news-detail-content">
+            <p>
+              <strong>SS İsterim Değer Üretim Paylaşım ve Eğitim Sosyal İşletme Kooperatifi</strong> ve{" "}
+              <strong>Mimoza Kadınları Derneği</strong>'nin katkılarıyla 8 Mart 2026 tarihinde
+              "Kadını Anlama ve Anma Günü" etkinliği düzenleniyor.
+            </p>
+
+            <p>
+              Bu anlamlı günde sizleri aramızda görmek bizleri mutlu kılacaktır.
+            </p>
+
+            <h3>'Kadının Dünü, Bugünü, Yarını' Paneli</h3>
+
+            <p><strong>Moderatör:</strong> Merih Uzun</p>
+
+            <h3>Panelistler</h3>
+            <ul>
+              <li><strong>Prof. Dr. Elif Akar</strong> – Akademisyen</li>
+              <li><strong>Ercan Akpınar</strong> – Gazeteci</li>
+              <li><strong>Aşkım Tan</strong> – Gazeteci-Araştırmacı Yazar, Sosyal Aktivist</li>
+              <li><strong>Feyza Aydın Kılıç</strong> – Oyuncu, Sunucu</li>
+            </ul>
+
+            <h3>Program</h3>
+            <ul>
+              <li><strong>15:00 – 15:30</strong> Karşılama Müziği</li>
+              <li><strong>15:30 – 15:35</strong> Açılış Konuşmaları ve Hoşgeldiniz</li>
+              <li><strong>15:35 – 17:00</strong> Panel</li>
+              <li><strong>17:00 – 17:15</strong> Soru Cevap</li>
+              <li><strong>17:15 – 17:40</strong> Sürpriz Davetli Konuşmacı</li>
+              <li><strong>17:40 – 17:45</strong> Teşekkür ve Toplu Anı Fotoğraf Çekimi</li>
+              <li><strong>17:45 – 18:00</strong> Yazarından Kısa Kitap Tanıtımı ve Kitap İmza</li>
+            </ul>
+            <p>Uğurlama ve sonrası serbest sohbet ve tanışma.</p>
+
+            <p>
+              <strong>Etkinlik ücretsizdir.</strong> Herkes sadece yediğinin içtiğinin ücretini ödemekle sorumludur. Arzu edenler cafe restorantın ürünlerinden yararlanabilir.
+            </p>
+
+            <h3>Medya Sponsoru</h3>
+            <p>FBD Medya Grubu ve VTV Türk</p>
+
+            <h3>Yayın</h3>
+            <p>Kanal Vizyon TV YouTube kanalından canlı yayın verilecektir.</p>
+          </div>
+
+          <div className="news-detail-image">
+            <img src={martEtkinlik} alt="8 Mart 2026 Kadını Anlama ve Anma Günü Etkinliği afişi" />
+          </div>
+
+          <div className="news-details">
+            <div className="detail-row">
+              <span>Etkinlik</span>
+              <strong>Kadını Anlama ve Anma Günü Paneli</strong>
+            </div>
+            <div className="detail-row">
+              <span>Tarih</span>
+              <strong>8 Mart 2026</strong>
+            </div>
+            <div className="detail-row">
+              <span>Saat</span>
+              <strong>15:00 – 18:00</strong>
+            </div>
+            <div className="detail-row">
+              <span>Yer</span>
+              <strong>Jevernal Coffee, Atatürk Bulvarı, Şanlı İşhanı 105, Kat 10, Kızılay / Ankara</strong>
+            </div>
+            <div className="detail-row">
+              <span>Moderatör</span>
+              <strong>Merih Uzun</strong>
+            </div>
+          </div>
+        </article>
+      </div>
+    );
+  }
 
   /* ------------------ YAZAR MURAT HAYDAROĞLU ZİYARETİ (ID: 5) ------------------ */
   if (id === "5") {
@@ -132,21 +224,21 @@ const HaberDetay: React.FC = () => {
 
           <div className="news-detail-content">
             <p>
-              Değer Üretim Paylaşım ve Eğitim Sosyal İşletme Kooperatifi kurumsal 
-              organizasyonu altında ve Kooperatifçilik Yılı kapsamında düzenlenmesi 
-              planlanan <strong>"Kooperatifçiliğin Kalkınmada Rolü ve Yeni Nesil Kooperatifçilik"</strong> 
-              temalı çalıştayın, <strong>20-21 Aralık 2025</strong> tarihlerinde Ankara’da 
+              Değer Üretim Paylaşım ve Eğitim Sosyal İşletme Kooperatifi kurumsal
+              organizasyonu altında ve Kooperatifçilik Yılı kapsamında düzenlenmesi
+              planlanan <strong>"Kooperatifçiliğin Kalkınmada Rolü ve Yeni Nesil Kooperatifçilik"</strong>
+              temalı çalıştayın, <strong>20-21 Aralık 2025</strong> tarihlerinde Ankara’da
               gerçekleştirilmesi öngörülmektedir.
             </p>
 
             <p>
-              Hazırlık ve koordinasyon sürecine bağlı olarak çalıştayın 
+              Hazırlık ve koordinasyon sürecine bağlı olarak çalıştayın
               <strong> 2026 yılına sarkması</strong> da ihtimal dahilindedir.
             </p>
 
             <p>
-              Çalıştayın hedef kitlesi; kooperatifler, yerel yönetimler, sivil toplum 
-              bileşenleri, kamu kuruluşları, bakanlık temsilcileri, akademik çevreler 
+              Çalıştayın hedef kitlesi; kooperatifler, yerel yönetimler, sivil toplum
+              bileşenleri, kamu kuruluşları, bakanlık temsilcileri, akademik çevreler
               ve gençlerden oluşmaktadır.
             </p>
 
@@ -160,7 +252,7 @@ const HaberDetay: React.FC = () => {
 
             <h3>Beklenen Çıktılar</h3>
             <p>
-              Kooperatifçiliğin güncel sorunları ve çözüm yolları konusunda kamuoyunda 
+              Kooperatifçiliğin güncel sorunları ve çözüm yolları konusunda kamuoyunda
               farkındalık yaratılması hedeflenmektedir.
             </p>
 
@@ -255,53 +347,53 @@ const HaberDetay: React.FC = () => {
       </div>
     );
   }
-/* ------------------ SAĞLIK MÜDÜRLÜĞÜ ZİYARETİ (ID: 6) ------------------ */
-if (id === "6") {
-  return (
-    <div className="news-detail-page">
-      <Link to="/bizden-haberler" className="back-link">
-        ← Tüm Haberlere Dön
-      </Link>
+  /* ------------------ SAĞLIK MÜDÜRLÜĞÜ ZİYARETİ (ID: 6) ------------------ */
+  if (id === "6") {
+    return (
+      <div className="news-detail-page">
+        <Link to="/bizden-haberler" className="back-link">
+          ← Tüm Haberlere Dön
+        </Link>
 
-      <article className="news-detail-article">
-        <div className="news-detail-header">
-          <span className="news-detail-category">Kurumsal Ziyaret</span>
-          <h1>
-            T.C Sağlık Bakanlığı Ankara İl Sağlık Müdürlüğü'ne Ziyaret
-          </h1>
-        </div>
-
-        <div className="news-detail-content">
-          <p>
-            T.C Sağlık Bakanlığı Ankara İl Sağlık Müdürlüğü'nü ziyaret ederek
-            yürüttüğümüz projeler ve olası iş birlikleri üzerine verimli
-            bir görüşme gerçekleştirdik.
-          </p>
-
-          <p>
-            Ziyaret kapsamında toplum sağlığı, sosyal projeler ve
-            kurumlar arası iş birliği olanakları ele alındı.
-          </p>
-        </div>
-
-        <div className="news-detail-image">
-          <img src={sağlık2} alt="Ankara İl Sağlık Müdürlüğü ziyareti" />
-        </div>
-
-        <div className="news-details">
-          <div className="detail-row">
-            <span>Etkinlik</span>
-            <strong>Kurumsal Ziyaret</strong>
+        <article className="news-detail-article">
+          <div className="news-detail-header">
+            <span className="news-detail-category">Kurumsal Ziyaret</span>
+            <h1>
+              T.C Sağlık Bakanlığı Ankara İl Sağlık Müdürlüğü'ne Ziyaret
+            </h1>
           </div>
-          <div className="detail-row">
-            <span>Yer</span>
-            <strong>Ankara İl Sağlık Müdürlüğü</strong>
+
+          <div className="news-detail-content">
+            <p>
+              T.C Sağlık Bakanlığı Ankara İl Sağlık Müdürlüğü'nü ziyaret ederek
+              yürüttüğümüz projeler ve olası iş birlikleri üzerine verimli
+              bir görüşme gerçekleştirdik.
+            </p>
+
+            <p>
+              Ziyaret kapsamında toplum sağlığı, sosyal projeler ve
+              kurumlar arası iş birliği olanakları ele alındı.
+            </p>
           </div>
-        </div>
-      </article>
-    </div>
-  );
-}
+
+          <div className="news-detail-image">
+            <img src={sağlık2} alt="Ankara İl Sağlık Müdürlüğü ziyareti" />
+          </div>
+
+          <div className="news-details">
+            <div className="detail-row">
+              <span>Etkinlik</span>
+              <strong>Kurumsal Ziyaret</strong>
+            </div>
+            <div className="detail-row">
+              <span>Yer</span>
+              <strong>Ankara İl Sağlık Müdürlüğü</strong>
+            </div>
+          </div>
+        </article>
+      </div>
+    );
+  }
 
   /* ------------------------------ HABER ID: 2 ------------------------------ */
   if (id === "2") {
@@ -319,7 +411,7 @@ if (id === "6") {
 
           <div className="news-detail-content">
             <p>
-              20-22 Kasım 2025 tarihlerinde düzenlenecek olan TRAVELEXPO ANKARA 
+              20-22 Kasım 2025 tarihlerinde düzenlenecek olan TRAVELEXPO ANKARA
               2025 fuarında standımızla yer alacağız.
             </p>
           </div>
@@ -346,7 +438,7 @@ if (id === "6") {
           </div>
         </article>
       </div>
-      
+
     );
   }
 
