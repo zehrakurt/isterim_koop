@@ -8,6 +8,7 @@ import ziyaretImage from "../../assets/2.jpeg";
 import yazarImage from "../../assets/1.jpeg";
 import sağlık from "../../assets/sağlık.jpeg";
 import martEtkinlik from "../../assets/8mart.jpg";
+import mart1 from "../../assets/mart1.jpeg";
 const BizdenHaberler: React.FC = () => {
   return (
     <div className="news-page">
@@ -16,6 +17,26 @@ const BizdenHaberler: React.FC = () => {
       </div>
 
       <div className="news-grid">
+        {/* ------------------ 8 MART DÜNYA KADINLAR GÜNÜ ETKİNLİĞİ (ID: 8) ------------------ */}
+        <Link to="/bizden-haberler/8" className="news-card-link">
+          <article className="news-card">
+            <div className="news-card-image" style={{ height: "320px" }}>
+              <img src={mart1} alt="8 Mart Dünya Kadınlar Günü Etkinliği" style={{ objectPosition: "center center" }} />
+              <div className="news-card-category">Etkinlik • 8 Mart</div>
+            </div>
+            <div className="news-card-content">
+              <time className="news-card-date">8 Mart 2026</time>
+              <h2 className="news-card-title">
+                8 Mart Dünya Kadınlar Günü Etkinliği
+              </h2>
+              <p className="news-card-excerpt">
+                8 Mart Dünya Kadınlar Günü'nde gerçekleştirdiğimiz etkinliğin fotoğrafları ve canlı yayın kayıtları.
+              </p>
+              <span className="news-card-read-more">Detayları Gör →</span>
+            </div>
+          </article>
+        </Link>
+
         {/* ------------------ 8 MART KADINI ANLAMA VE ANMA GÜNÜ ETKİNLİĞİ (ID: 7) ------------------ */}
         <Link to="/bizden-haberler/7" className="news-card-link">
           <article className="news-card">
@@ -38,25 +59,25 @@ const BizdenHaberler: React.FC = () => {
         </Link>
 
         {/* ------------------ SAĞLIK MÜDÜRLÜĞÜ ZİYARETİ (ID: 6) ------------------ */}
-<Link to="/bizden-haberler/6" className="news-card-link">
-  <article className="news-card">
-    <div className="news-card-image">
-      <img src={sağlık} alt="Ankara İl Sağlık Müdürlüğü ziyareti" />
-      <div className="news-card-category">Kurumsal Ziyaret</div>
-    </div>
-    <div className="news-card-content">
-      <time className="news-card-date">Tarih Yaz</time>
-      <h2 className="news-card-title">
-        T.C Sağlık Bakanlığı Ankara İl Sağlık Müdürlüğü Ziyareti
-      </h2>
-      <p className="news-card-excerpt">
-        Ankara İl Sağlık Müdürlüğü ile gerçekleştirdiğimiz ziyarette
-        iş birliği ve projeler üzerine görüş alışverişi yapıldı.
-      </p>
-      <span className="news-card-read-more">Detayları Gör →</span>
-    </div>
-  </article>
-</Link>
+        <Link to="/bizden-haberler/6" className="news-card-link">
+          <article className="news-card">
+            <div className="news-card-image">
+              <img src={sağlık} alt="Ankara İl Sağlık Müdürlüğü ziyareti" />
+              <div className="news-card-category">Kurumsal Ziyaret</div>
+            </div>
+            <div className="news-card-content">
+              <time className="news-card-date">Tarih Yaz</time>
+              <h2 className="news-card-title">
+                T.C Sağlık Bakanlığı Ankara İl Sağlık Müdürlüğü Ziyareti
+              </h2>
+              <p className="news-card-excerpt">
+                Ankara İl Sağlık Müdürlüğü ile gerçekleştirdiğimiz ziyarette
+                iş birliği ve projeler üzerine görüş alışverişi yapıldı.
+              </p>
+              <span className="news-card-read-more">Detayları Gör →</span>
+            </div>
+          </article>
+        </Link>
 
 
         {/* ------------------ YAZAR MURAT HAYDAROĞLU ZİYARETİ (ID: 5) ------------------ */}
@@ -117,7 +138,7 @@ const BizdenHaberler: React.FC = () => {
                 Kooperatifçiliğin Kalkınmada Rolü ve Yeni Nesil Kooperatifçilik Çalıştayı
               </h2>
               <p className="news-card-excerpt">
-                Çalıştay, kooperatiflerin kalkınmada rolü, yeni nesil modeller, 
+                Çalıştay, kooperatiflerin kalkınmada rolü, yeni nesil modeller,
                 yönetişim, dayanışma ve bilimsel çözüm arayışlarıyla Ankara’da düzenlenecektir.
               </p>
               <span className="news-card-read-more">Detayları Gör →</span>
@@ -140,7 +161,7 @@ const BizdenHaberler: React.FC = () => {
                 İlk Adım Müzik ile TravelExpo Ankara'da Sahnedeyiz
               </h2>
               <p className="news-card-excerpt">
-                20-22 Kasım 2025 tarihleri arasında gerçekleşecek 8. Uluslararası Turizm 
+                20-22 Kasım 2025 tarihleri arasında gerçekleşecek 8. Uluslararası Turizm
                 ve Seyahat Fuarı TravelExpo'da İlk Adım Müzik Grubu ile sahnede olacağız.
               </p>
               <span className="news-card-read-more">Detayları Gör →</span>
@@ -161,7 +182,7 @@ const BizdenHaberler: React.FC = () => {
                 TRAVELEXPO ANKARA 2025 – Standımız Hazır
               </h2>
               <p className="news-card-excerpt">
-                ATO Congresium'da düzenlenecek TRAVELEXPO ANKARA 2025 fuarında 
+                ATO Congresium'da düzenlenecek TRAVELEXPO ANKARA 2025 fuarında
                 standımızla yer alacağız.
               </p>
               <span className="news-card-read-more">Detayları Gör →</span>

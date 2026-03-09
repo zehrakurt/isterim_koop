@@ -234,5 +234,140 @@
     padding: 0 24px;
     margin-bottom: 24px;
   }
+
+  .news-detail-videos {
+    padding: 0 24px 32px;
+  }
+
+  .news-detail-videos-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
+/* 3-column image grid variant */
+.news-detail-images-grid--three {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* Video section */
+.news-detail-videos {
+  padding: 0 48px 40px;
+}
+
+.news-detail-videos-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #0b2447;
+  margin-bottom: 24px;
+}
+
+.news-detail-videos-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.video-embed {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  /* 16:9 aspect ratio */
+  border-radius: 16px;
+  overflow: hidden;
+  background: #0f172a;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.15);
+}
+
+.video-embed iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+@media (max-width: 768px) {
+  .news-detail-images-grid--three {
+    grid-template-columns: 1fr;
+  }
+
+  .news-detail-videos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .news-detail-videos {
+    padding: 0 24px 24px;
+  }
+}
+
+/* YouTube Card Styles */
+.youtube-card {
+  display: block;
+  text-decoration: none;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.1);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.youtube-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.18);
+}
+
+.youtube-card-thumbnail {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #0f172a;
+}
+
+.youtube-card-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.youtube-card:hover .youtube-card-thumbnail img {
+  transform: scale(1.05);
+}
+
+.youtube-play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.85;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4));
+}
+
+.youtube-card:hover .youtube-play-btn {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.youtube-card-info {
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.youtube-card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0b2447;
+}
+
+.youtube-card-subtitle {
+  font-size: 0.85rem;
+  color: #dc2626;
+  font-weight: 500;
+}

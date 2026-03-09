@@ -7,8 +7,120 @@ import ziyaretImage from "../../assets/2.jpeg";
 import yazarImage from "../../assets/1.jpeg";
 import sağlık2 from "../../assets/sağlık2.jpeg";
 import martEtkinlik from "../../assets/8mart.jpg";
+import mart1 from "../../assets/mart1.jpeg";
+import mart2 from "../../assets/mart2.jpeg";
+import mart3 from "../../assets/mart3.jpeg";
 const HaberDetay: React.FC = () => {
   const { id } = useParams<{ id: string }>();
+
+  /* ------------------ 8 MART DÜNYA KADINLAR GÜNÜ ETKİNLİĞİ (ID: 8) ------------------ */
+  if (id === "8") {
+    return (
+      <div className="news-detail-page">
+        <Link to="/bizden-haberler" className="back-link">
+          ← Tüm Haberlere Dön
+        </Link>
+
+        <article className="news-detail-article">
+          <div className="news-detail-header">
+            <span className="news-detail-category">Etkinlik • 8 Mart</span>
+            <h1>8 Mart Dünya Kadınlar Günü Etkinliği</h1>
+          </div>
+
+          <div className="news-detail-content">
+            <p>
+              <strong>8 Mart Dünya Kadınlar Günü</strong> kapsamında düzenlediğimiz etkinlik
+              büyük bir katılım ve coşkuyla gerçekleşti. Etkinlikte kadınların toplumsal
+              rolü, hakları ve geleceğine dair önemli konular ele alındı.
+            </p>
+            <p>
+              Panelimizde değerli konuşmacılarımız "Kadının Dünü, Bugünü, Yarını" teması
+              üzerine görüşlerini paylaştı. Katılımcılarımızla birlikte anlamlı ve
+              unutulmaz bir gün geçirdik.
+            </p>
+          </div>
+
+          {/* Etkinlik Fotoğrafları */}
+          <div className="news-detail-images-grid news-detail-images-grid--three">
+            <div className="news-detail-image-item">
+              <img src={mart1} alt="8 Mart Etkinliği Fotoğraf 1" />
+            </div>
+            <div className="news-detail-image-item">
+              <img src={mart2} alt="8 Mart Etkinliği Fotoğraf 2" />
+            </div>
+            <div className="news-detail-image-item">
+              <img src={mart3} alt="8 Mart Etkinliği Fotoğraf 3" />
+            </div>
+          </div>
+
+          {/* YouTube Canlı Yayın Kayıtları */}
+          <div className="news-detail-videos">
+            <h3 className="news-detail-videos-title">🎥 Canlı Yayın Kayıtları</h3>
+            <div className="news-detail-videos-grid">
+              <a
+                href="https://www.youtube.com/live/MCE31UbO4vw"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="youtube-card"
+              >
+                <div className="youtube-card-thumbnail">
+                  <img
+                    src="https://img.youtube.com/vi/MCE31UbO4vw/hqdefault.jpg"
+                    alt="Canlı Yayın 1"
+                  />
+                  <div className="youtube-play-btn">
+                    <svg viewBox="0 0 68 48" width="68" height="48">
+                      <path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55C3.97 2.33 2.27 4.81 1.48 7.74.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red" />
+                      <path d="M45 24 27 14v20" fill="white" />
+                    </svg>
+                  </div>
+                </div>
+                <div className="youtube-card-info">
+                  <span className="youtube-card-title">Canlı Yayın Kaydı – Bölüm 1</span>
+                  <span className="youtube-card-subtitle">YouTube'da İzle →</span>
+                </div>
+              </a>
+              <a
+                href="https://www.youtube.com/live/h_QK9qAstcY"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="youtube-card"
+              >
+                <div className="youtube-card-thumbnail">
+                  <img
+                    src="https://img.youtube.com/vi/h_QK9qAstcY/hqdefault.jpg"
+                    alt="Canlı Yayın 2"
+                  />
+                  <div className="youtube-play-btn">
+                    <svg viewBox="0 0 68 48" width="68" height="48">
+                      <path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55C3.97 2.33 2.27 4.81 1.48 7.74.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red" />
+                      <path d="M45 24 27 14v20" fill="white" />
+                    </svg>
+                  </div>
+                </div>
+                <div className="youtube-card-info">
+                  <span className="youtube-card-title">Canlı Yayın Kaydı – Bölüm 2</span>
+                  <span className="youtube-card-subtitle">YouTube'da İzle →</span>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div className="news-details">
+            <div className="detail-row">
+              <span>Etkinlik</span>
+              <strong>8 Mart Dünya Kadınlar Günü</strong>
+            </div>
+            <div className="detail-row">
+              <span>Tarih</span>
+              <strong>8 Mart 2026</strong>
+            </div>
+
+          </div>
+        </article>
+      </div>
+    );
+  }
 
   /* ------------------ 8 MART KADINI ANLAMA VE ANMA GÜNÜ ETKİNLİĞİ (ID: 7) ------------------ */
   if (id === "7") {
