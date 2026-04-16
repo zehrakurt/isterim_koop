@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 // Sosyal medya ikonları için buraya bir kütüphane (örneğin react-icons) veya SVG'ler eklenebilir.
 // Basitlik adına burada sadece metin yer tutucuları kullanılmıştır.
 
+const INSTAGRAM_URL = "https://www.instagram.com/isterimkooperatif?utm_source=qr&igsh=NmVlaG9nNmJtYzlu";
+
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
@@ -57,7 +59,7 @@ Altındag-Ankara
           <div className="social-links">
             {/* Gerçek projede bu kısımlar ikonlarla değiştirilmelidir. */}
             <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" className="social-icon">Facebook</a>
-            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" className="social-icon">Instagram</a>
+            <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="social-icon">Instagram</a>
             <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" className="social-icon">Twitter</a>
           </div>
         </div>

@@ -1,5 +1,8 @@
 import React from "react";
 import "./Contact.css";
+import instagramQrImage from "../../assets/99999.jpeg";
+
+const INSTAGRAM_URL = "https://www.instagram.com/isterimkooperatif?utm_source=qr&igsh=NmVlaG9nNmJtYzlu";
 
 const Contact: React.FC = () => {
   return (
@@ -55,6 +58,22 @@ const Contact: React.FC = () => {
             allowFullScreen
           ></iframe>
         </div>
+        <a
+          href={INSTAGRAM_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="contact-qr-card"
+        >
+          <img
+            src={instagramQrImage}
+            alt="Instagram QR kodu"
+            className="contact-qr-image"
+          />
+          <div className="contact-qr-content">
+            <h3>Instagram QR</h3>
+            <p>QR kodu okutarak Instagram hesabimiza ulasabilirsiniz.</p>
+          </div>
+        </a>
       </section>
 
       <section className="contact-extra">
@@ -64,7 +83,17 @@ const Contact: React.FC = () => {
         </div>
         <div>
           <h3>Sosyal medya</h3>
-          <p>@isterimkoop</p>
+          <a
+            href={INSTAGRAM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="contact-instagram-link"
+          >
+            @isterimkooperatif
+          </a>
+          <p className="contact-instagram-note">
+            Instagram hesabimizi buradan ziyaret edebilirsiniz.
+          </p>
         </div>
         <div>
           <h3>Telefon</h3>
