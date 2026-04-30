@@ -9,6 +9,7 @@ import BizdenHaberler from "./pages/bizden haberler/BizdenHaberler";
 import HaberDetay from "./pages/bizden haberler/HaberDetay";
 import Home2 from "./home2";
 import ScrollToTop from "./ScrollToTop";
+import AdminHaberler from "./pages/admin/AdminHaberler";
 
 function App() {
   return (
@@ -26,6 +27,9 @@ function App() {
             <Route path="bizden-haberler" element={<BizdenHaberler />} />
             <Route path="bizden-haberler/:id" element={<HaberDetay />} />
           </Route>
+          
+          {/* Gizli Admin Rotası - MainLayout dışında (veya isterseniz içinde de olabilir, şimdilik dışında temiz sayfa olarak tutuyoruz) */}
+          <Route path="/admin" element={<AdminHaberler />} />
         </Routes>
       </BrowserRouter>
     </>
