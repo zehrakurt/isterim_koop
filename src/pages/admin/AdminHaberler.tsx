@@ -5,16 +5,6 @@ import type { User } from 'firebase/auth';
 import { collection, addDoc, serverTimestamp, getDocs, deleteDoc, doc, orderBy, query, updateDoc } from 'firebase/firestore';
 import './AdminHaberler.css';
 
-// Eski resimleri import ediyoruz
-import imgHaber1 from "../../assets/bizden haberler.jpg";
-import imgHaber2 from "../../assets/haber4.jpg";
-import imgHaber3 from "../../assets/12.jpeg";
-import imgHaber4 from "../../assets/2.jpeg";
-import imgHaber5 from "../../assets/1.jpeg";
-import imgHaber6 from "../../assets/sağlık2.jpeg";
-import imgHaber7 from "../../assets/8mart.jpg";
-import imgHaber8 from "../../assets/mart1.jpeg";
-
 interface NewsItem {
   id: string;
   title: string;
@@ -56,14 +46,12 @@ const compressImage = (file: File | string): Promise<string> => {
     };
 
     if (typeof file === 'string') {
-      // Eğer bir URL gelirse (migrasyon için)
       const img = new Image();
       img.crossOrigin = "anonymous";
       img.src = file;
       img.onload = () => handleImage(img);
       img.onerror = (error) => reject(error);
     } else {
-      // Eğer bir File objesi gelirse (yeni ekleme için)
       const reader = new FileReader();
       reader.readAsDataURL(file);
       reader.onload = (event) => {
@@ -203,46 +191,6 @@ const AdminHaberler: React.FC = () => {
     }
   };
 
-  const handleSuperMigration = async () => {
-    if (!window.confirm("Eski haberleri (Base64 formatında) tekrar yüklemek istediğinize emin misiniz? Lütfen önce listedeki bozuk haberleri silin.")) return;
-    
-    setIsSubmitting(true);
-    try {
-      const oldNewsData = [
-        { title: "İlk Adım Müzik ile TravelExpo Ankara'da Sahnedeyiz", excerpt: "20-22 Kasım 2025 tarihleri arasında gerçekleşecek 8. Uluslararası Turizm ve Seyahat Fuarı TravelExpo'da İlk Adım Müzik Grubu ile sahnede olacağız.", category: "Kültür • Sanat • Turizm • Sinema Akademisi", date: "20 Kasım 2025", content: "20-22 Kasım 2025 tarihleri arasında gerçekleşecek 8. Uluslararası Turizm ve Seyahat Fuarı TravelExpo'da, İlk Adım Müzik Grubu ile sahnede olacağız.", img: imgHaber1 },
-        { title: "TRAVELEXPO ANKARA 2025 – Standımız Hazır", excerpt: "ATO Congresium'da düzenlenecek TRAVELEXPO ANKARA 2025 fuarında standımızla yer alacağız.", category: "Fuar", date: "20-22 Kasım 2025", content: "20-22 Kasım 2025 tarihlerinde düzenlenecek olan TRAVELEXPO ANKARA 2025 fuarında standımızla yer alacağız.", img: imgHaber2 },
-        { title: "Kooperatifçiliğin Kalkınmada Rolü ve Yeni Nesil Kooperatifçilik Çalıştayı", excerpt: "Çalıştay, kooperatiflerin kalkınmada rolü, yeni nesil modeller...", category: "Kooperatifçilik • Çalıştay", date: "20-21 Aralık 2025", content: "Değer Üretim Paylaşım ve Eğitim Sosyal İşletme Kooperatifi kurumsal organizasyonu altında...", img: imgHaber3 },
-        { title: "Vali Yardımcısı Dr. Ayhan Özkan'dan Ziyaret", excerpt: "Vali Yardımcısı Dr. Ayhan Özkan bugün kooperatifimizi ziyaret ederek çalışmalarımız hakkında bilgi aldı.", category: "Protokol Ziyareti", date: "28 Ocak 2026", content: "Vali Yardımcısı Dr. Ayhan Özkan bugün kooperatifimizi ziyaret ederek yürüttüğümüz projeler ve iş birlikleri hakkında bilgi aldı.", img: imgHaber4 },
-        { title: "Yazar-Şair Murat Haydaroğlu Ofisimizde", excerpt: "Yazar-şair Murat Haydaroğlu ofisimizi ziyaret ederek yeni kitabını ekibimize hediye etti.", category: "Kültür • Edebiyat", date: "28 Ocak 2026", content: "Yazar-şair Murat Haydaroğlu ofisimizi ziyaret ederek yeni kitabını ekibimize hediye etti.", img: imgHaber5 },
-        { title: "T.C Sağlık Bakanlığı Ankara İl Sağlık Müdürlüğü Ziyareti", excerpt: "Ankara İl Sağlık Müdürlüğü ile gerçekleştirdiğimiz ziyarette iş birliği ve projeler üzerine görüş alışverişi yapıldı.", category: "Kurumsal Ziyaret", date: "Belli Değil", content: "T.C Sağlık Bakanlığı Ankara İl Sağlık Müdürlüğü'nü ziyaret ederek yürüttüğümüz projeler ve olası iş birlikleri üzerine verimli bir görüşme gerçekleştirdik.", img: imgHaber6 },
-        { title: "8 Mart 2026 Kadını Anlama ve Anma Günü Etkinliği", excerpt: "SS İsterim Değer Üretim Paylaşım ve Eğitim Sosyal İşletme Kooperatifi ve Mimoza Kadınları Derneği'nin katkılarıyla 'Kadının Dünü, Bugünü, Yarını' paneli düzenleniyor.", category: "Etkinlik • Panel", date: "8 Mart 2026", content: "SS İsterim Değer Üretim Paylaşım ve Eğitim Sosyal İşletme Kooperatifi ve Mimoza Kadınları Derneği'nin katkılarıyla 8 Mart 2026 tarihinde 'Kadını Anlama ve Anma Günü' etkinliği düzenleniyor.", img: imgHaber7 },
-        { title: "8 Mart Dünya Kadınlar Günü Etkinliği", excerpt: "8 Mart Dünya Kadınlar Günü'nde gerçekleştirdiğimiz etkinliğin fotoğrafları ve canlı yayın kayıtları.", category: "Etkinlik • 8 Mart", date: "8 Mart 2026", content: "8 Mart Dünya Kadınlar Günü kapsamında düzenlediğimiz etkinlik büyük bir katılım ve coşkuyla gerçekleşti.", img: imgHaber8 }
-      ];
-
-      for (const item of oldNewsData) {
-        // Resmi Base64'e çeviriyoruz
-        const base64Img = await compressImage(item.img);
-        await addDoc(collection(db, "haberler"), {
-          title: item.title,
-          excerpt: item.excerpt,
-          category: item.category,
-          date: item.date,
-          content: item.content,
-          imageUrl: base64Img,
-          createdAt: serverTimestamp()
-        });
-      }
-
-      alert("Tüm eski haberler Base64 olarak başarıyla yüklendi!");
-      fetchNews();
-    } catch (err) {
-      console.error(err);
-      alert("Hata oluştu.");
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
   if (!user) {
     return (
       <div className="admin-container">
@@ -262,9 +210,6 @@ const AdminHaberler: React.FC = () => {
       <div className="admin-panel-header">
         <h2>Haber Yönetim Paneli</h2>
         <div style={{display: 'flex', gap: '10px'}}>
-          <button className="submit-btn" style={{background: 'purple'}} onClick={handleSuperMigration}>
-            Bozuk Resimleri Düzelt (Migrate)
-          </button>
           <button className="logout-btn" onClick={handleLogout}>Çıkış Yap</button>
         </div>
       </div>
