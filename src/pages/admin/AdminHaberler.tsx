@@ -5,6 +5,16 @@ import type { User } from 'firebase/auth';
 import { collection, addDoc, serverTimestamp, getDocs, deleteDoc, doc, orderBy, query, updateDoc } from 'firebase/firestore';
 import './AdminHaberler.css';
 
+// Eski resimleri import ediyoruz
+import imgHaber1 from "../../assets/bizden haberler.jpg";
+import imgHaber2 from "../../assets/haber4.jpg";
+import imgHaber3 from "../../assets/12.jpeg";
+import imgHaber4 from "../../assets/2.jpeg";
+import imgHaber5 from "../../assets/1.jpeg";
+import imgHaber6 from "../../assets/sağlık2.jpeg";
+import imgHaber7 from "../../assets/8mart.jpg";
+import imgHaber8 from "../../assets/mart1.jpeg";
+
 interface NewsItem {
   id: string;
   title: string;
@@ -15,43 +25,55 @@ interface NewsItem {
   imageUrl: string;
 }
 
-const compressImage = (file: File): Promise<string> => {
+const compressImage = (file: File | string): Promise<string> => {
   return new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = (event) => {
-      const img = new Image();
-      img.src = event.target?.result as string;
-      img.onload = () => {
-        const canvas = document.createElement('canvas');
-        const MAX_WIDTH = 800;
-        const MAX_HEIGHT = 800;
-        let width = img.width;
-        let height = img.height;
+    const handleImage = (img: HTMLImageElement) => {
+      const canvas = document.createElement('canvas');
+      const MAX_WIDTH = 800;
+      const MAX_HEIGHT = 800;
+      let width = img.width;
+      let height = img.height;
 
-        if (width > height) {
-          if (width > MAX_WIDTH) {
-            height *= MAX_WIDTH / width;
-            width = MAX_WIDTH;
-          }
-        } else {
-          if (height > MAX_HEIGHT) {
-            width *= MAX_HEIGHT / height;
-            height = MAX_HEIGHT;
-          }
+      if (width > height) {
+        if (width > MAX_WIDTH) {
+          height *= MAX_WIDTH / width;
+          width = MAX_WIDTH;
         }
+      } else {
+        if (height > MAX_HEIGHT) {
+          width *= MAX_HEIGHT / height;
+          height = MAX_HEIGHT;
+        }
+      }
 
-        canvas.width = width;
-        canvas.height = height;
-        const ctx = canvas.getContext('2d');
-        ctx?.drawImage(img, 0, 0, width, height);
-        
-        const dataUrl = canvas.toDataURL('image/jpeg', 0.7);
-        resolve(dataUrl);
-      };
-      img.onerror = (error) => reject(error);
+      canvas.width = width;
+      canvas.height = height;
+      const ctx = canvas.getContext('2d');
+      ctx?.drawImage(img, 0, 0, width, height);
+      
+      const dataUrl = canvas.toDataURL('image/jpeg', 0.7);
+      resolve(dataUrl);
     };
-    reader.onerror = (error) => reject(error);
+
+    if (typeof file === 'string') {
+      // Eğer bir URL gelirse (migrasyon için)
+      const img = new Image();
+      img.crossOrigin = "anonymous";
+      img.src = file;
+      img.onload = () => handleImage(img);
+      img.onerror = (error) => reject(error);
+    } else {
+      // Eğer bir File objesi gelirse (yeni ekleme için)
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = (event) => {
+        const img = new Image();
+        img.src = event.target?.result as string;
+        img.onload = () => handleImage(img);
+        img.onerror = (error) => reject(error);
+      };
+      reader.onerror = (error) => reject(error);
+    }
   });
 };
 
@@ -130,14 +152,13 @@ const AdminHaberler: React.FC = () => {
     setCategory(news.category);
     setDate(news.date);
     setContent(news.content || '');
-    setImage(null); // Düzenlemede resim değişmeyebilir
+    setImage(null);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Düzenleme yapmıyorsak (yeni ekliyorsak) resim zorunlu, düzenliyorsak resim seçmeyebilir.
     if (!title || !excerpt || !content || !category || !date || (!image && !editingId)) {
       alert("Lütfen gerekli alanları doldurun.");
       return;
@@ -146,40 +167,22 @@ const AdminHaberler: React.FC = () => {
     setIsSubmitting(true);
     try {
       if (editingId) {
-        // GÜNCELLEME İŞLEMİ
-        const updateData: any = {
-          title,
-          excerpt,
-          category,
-          date,
-          content
-        };
-        
-        // Eğer yeni fotoğraf seçildiyse onu da güncelle
+        const updateData: any = { title, excerpt, category, date, content };
         if (image) {
           updateData.imageUrl = await compressImage(image);
         }
-
         await updateDoc(doc(db, "haberler", editingId), updateData);
         alert("Haber başarıyla güncellendi!");
       } else {
-        // YENİ EKLEME İŞLEMİ
         const imageUrl = await compressImage(image as File);
         await addDoc(collection(db, "haberler"), {
-          title,
-          excerpt,
-          category,
-          date,
-          content,
-          imageUrl,
+          title, excerpt, category, date, content, imageUrl,
           createdAt: serverTimestamp()
         });
         alert("Haber başarıyla eklendi!");
       }
-      
       resetForm();
       fetchNews();
-
     } catch (error) {
       console.error("İşlem sırasında hata:", error);
       alert("Bir hata oluştu. Lütfen tekrar deneyin.");
@@ -200,26 +203,54 @@ const AdminHaberler: React.FC = () => {
     }
   };
 
+  const handleSuperMigration = async () => {
+    if (!window.confirm("Eski haberleri (Base64 formatında) tekrar yüklemek istediğinize emin misiniz? Lütfen önce listedeki bozuk haberleri silin.")) return;
+    
+    setIsSubmitting(true);
+    try {
+      const oldNewsData = [
+        { title: "İlk Adım Müzik ile TravelExpo Ankara'da Sahnedeyiz", excerpt: "20-22 Kasım 2025 tarihleri arasında gerçekleşecek 8. Uluslararası Turizm ve Seyahat Fuarı TravelExpo'da İlk Adım Müzik Grubu ile sahnede olacağız.", category: "Kültür • Sanat • Turizm • Sinema Akademisi", date: "20 Kasım 2025", content: "20-22 Kasım 2025 tarihleri arasında gerçekleşecek 8. Uluslararası Turizm ve Seyahat Fuarı TravelExpo'da, İlk Adım Müzik Grubu ile sahnede olacağız.", img: imgHaber1 },
+        { title: "TRAVELEXPO ANKARA 2025 – Standımız Hazır", excerpt: "ATO Congresium'da düzenlenecek TRAVELEXPO ANKARA 2025 fuarında standımızla yer alacağız.", category: "Fuar", date: "20-22 Kasım 2025", content: "20-22 Kasım 2025 tarihlerinde düzenlenecek olan TRAVELEXPO ANKARA 2025 fuarında standımızla yer alacağız.", img: imgHaber2 },
+        { title: "Kooperatifçiliğin Kalkınmada Rolü ve Yeni Nesil Kooperatifçilik Çalıştayı", excerpt: "Çalıştay, kooperatiflerin kalkınmada rolü, yeni nesil modeller...", category: "Kooperatifçilik • Çalıştay", date: "20-21 Aralık 2025", content: "Değer Üretim Paylaşım ve Eğitim Sosyal İşletme Kooperatifi kurumsal organizasyonu altında...", img: imgHaber3 },
+        { title: "Vali Yardımcısı Dr. Ayhan Özkan'dan Ziyaret", excerpt: "Vali Yardımcısı Dr. Ayhan Özkan bugün kooperatifimizi ziyaret ederek çalışmalarımız hakkında bilgi aldı.", category: "Protokol Ziyareti", date: "28 Ocak 2026", content: "Vali Yardımcısı Dr. Ayhan Özkan bugün kooperatifimizi ziyaret ederek yürüttüğümüz projeler ve iş birlikleri hakkında bilgi aldı.", img: imgHaber4 },
+        { title: "Yazar-Şair Murat Haydaroğlu Ofisimizde", excerpt: "Yazar-şair Murat Haydaroğlu ofisimizi ziyaret ederek yeni kitabını ekibimize hediye etti.", category: "Kültür • Edebiyat", date: "28 Ocak 2026", content: "Yazar-şair Murat Haydaroğlu ofisimizi ziyaret ederek yeni kitabını ekibimize hediye etti.", img: imgHaber5 },
+        { title: "T.C Sağlık Bakanlığı Ankara İl Sağlık Müdürlüğü Ziyareti", excerpt: "Ankara İl Sağlık Müdürlüğü ile gerçekleştirdiğimiz ziyarette iş birliği ve projeler üzerine görüş alışverişi yapıldı.", category: "Kurumsal Ziyaret", date: "Belli Değil", content: "T.C Sağlık Bakanlığı Ankara İl Sağlık Müdürlüğü'nü ziyaret ederek yürüttüğümüz projeler ve olası iş birlikleri üzerine verimli bir görüşme gerçekleştirdik.", img: imgHaber6 },
+        { title: "8 Mart 2026 Kadını Anlama ve Anma Günü Etkinliği", excerpt: "SS İsterim Değer Üretim Paylaşım ve Eğitim Sosyal İşletme Kooperatifi ve Mimoza Kadınları Derneği'nin katkılarıyla 'Kadının Dünü, Bugünü, Yarını' paneli düzenleniyor.", category: "Etkinlik • Panel", date: "8 Mart 2026", content: "SS İsterim Değer Üretim Paylaşım ve Eğitim Sosyal İşletme Kooperatifi ve Mimoza Kadınları Derneği'nin katkılarıyla 8 Mart 2026 tarihinde 'Kadını Anlama ve Anma Günü' etkinliği düzenleniyor.", img: imgHaber7 },
+        { title: "8 Mart Dünya Kadınlar Günü Etkinliği", excerpt: "8 Mart Dünya Kadınlar Günü'nde gerçekleştirdiğimiz etkinliğin fotoğrafları ve canlı yayın kayıtları.", category: "Etkinlik • 8 Mart", date: "8 Mart 2026", content: "8 Mart Dünya Kadınlar Günü kapsamında düzenlediğimiz etkinlik büyük bir katılım ve coşkuyla gerçekleşti.", img: imgHaber8 }
+      ];
+
+      for (const item of oldNewsData) {
+        // Resmi Base64'e çeviriyoruz
+        const base64Img = await compressImage(item.img);
+        await addDoc(collection(db, "haberler"), {
+          title: item.title,
+          excerpt: item.excerpt,
+          category: item.category,
+          date: item.date,
+          content: item.content,
+          imageUrl: base64Img,
+          createdAt: serverTimestamp()
+        });
+      }
+
+      alert("Tüm eski haberler Base64 olarak başarıyla yüklendi!");
+      fetchNews();
+    } catch (err) {
+      console.error(err);
+      alert("Hata oluştu.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   if (!user) {
     return (
       <div className="admin-container">
         <form className="admin-login" onSubmit={handleLogin}>
           <h2>Yönetici Girişi</h2>
           {loginError && <p style={{color: 'red'}}>{loginError}</p>}
-          <input 
-            type="email" 
-            placeholder="E-posta" 
-            value={email} 
-            onChange={(e) => setEmail(e.target.value)} 
-            required 
-          />
-          <input 
-            type="password" 
-            placeholder="Şifre" 
-            value={password} 
-            onChange={(e) => setPassword(e.target.value)} 
-            required 
-          />
+          <input type="email" placeholder="E-posta" value={email} onChange={(e) => setEmail(e.target.value)} required />
+          <input type="password" placeholder="Şifre" value={password} onChange={(e) => setPassword(e.target.value)} required />
           <button type="submit">Giriş Yap</button>
         </form>
       </div>
@@ -230,68 +261,45 @@ const AdminHaberler: React.FC = () => {
     <div className="admin-container">
       <div className="admin-panel-header">
         <h2>Haber Yönetim Paneli</h2>
-        <button className="logout-btn" onClick={handleLogout}>Çıkış Yap</button>
+        <div style={{display: 'flex', gap: '10px'}}>
+          <button className="submit-btn" style={{background: 'purple'}} onClick={handleSuperMigration}>
+            Bozuk Resimleri Düzelt (Migrate)
+          </button>
+          <button className="logout-btn" onClick={handleLogout}>Çıkış Yap</button>
+        </div>
       </div>
 
       <form className="admin-form" onSubmit={handleSubmit}>
         <h3>{editingId ? "Haberi Düzenle" : "Yeni Haber Ekle"}</h3>
-        
         <div className="form-group">
           <label>Başlık</label>
           <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} required />
         </div>
-
         <div className="form-group">
           <label>Kısa Özet</label>
           <input type="text" value={excerpt} onChange={(e) => setExcerpt(e.target.value)} required />
         </div>
-
         <div className="form-group">
-          <label>Kategori (Örn: Etkinlik • Panel)</label>
+          <label>Kategori</label>
           <input type="text" value={category} onChange={(e) => setCategory(e.target.value)} required />
         </div>
-
         <div className="form-group">
-          <label>Tarih (Örn: 1 Mayıs 2026)</label>
+          <label>Tarih</label>
           <input type="text" value={date} onChange={(e) => setDate(e.target.value)} required />
         </div>
-
         <div className="form-group">
           <label>Kapak Görseli {editingId && "(Değiştirmek istemiyorsanız boş bırakın)"}</label>
-          <input 
-            type="file" 
-            id="imageInput"
-            accept="image/*" 
-            onChange={(e) => {
-              if (e.target.files && e.target.files[0]) {
-                setImage(e.target.files[0]);
-              }
-            }} 
-            required={!editingId} // Sadece yeni eklerken zorunlu
-          />
+          <input type="file" id="imageInput" accept="image/*" onChange={(e) => e.target.files && setImage(e.target.files[0])} required={!editingId} />
         </div>
-
         <div className="form-group">
           <label>Haber İçeriği</label>
-          <textarea 
-            rows={10} 
-            value={content} 
-            onChange={(e) => setContent(e.target.value)} 
-            required 
-            placeholder="Haberin detaylı içeriğini buraya yazın..."
-          />
+          <textarea rows={10} value={content} onChange={(e) => setContent(e.target.value)} required />
         </div>
-
         <div style={{display: 'flex', gap: '1rem'}}>
           <button type="submit" className="submit-btn" disabled={isSubmitting} style={{flex: 1}}>
             {isSubmitting ? 'İşleniyor...' : (editingId ? 'Haberi Güncelle' : 'Haberi Yükle')}
           </button>
-          
-          {editingId && (
-            <button type="button" className="submit-btn" style={{background: '#6c757d'}} onClick={resetForm}>
-              İptal Et
-            </button>
-          )}
+          {editingId && <button type="button" className="submit-btn" style={{background: '#6c757d'}} onClick={resetForm}>İptal Et</button>}
         </div>
       </form>
 
@@ -305,13 +313,7 @@ const AdminHaberler: React.FC = () => {
                 <span>{news.date} - {news.category}</span>
               </div>
               <div style={{display: 'flex', gap: '0.5rem'}}>
-                <button 
-                  className="delete-btn" 
-                  style={{background: '#0d6efd'}} 
-                  onClick={() => handleEdit(news)}
-                >
-                  Düzenle
-                </button>
+                <button className="delete-btn" style={{background: '#0d6efd'}} onClick={() => handleEdit(news)}>Düzenle</button>
                 <button className="delete-btn" onClick={() => handleDelete(news.id)}>Sil</button>
               </div>
             </div>
