@@ -3,7 +3,7 @@ import { getFirestore } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyD-nQ45VesilgOBVgEDrwiOXgXC5ANnjuU",
+  apiKey: "AIzaSyA1ss6Amc6WbBXVt4d5IVgG2ISoIU8Rbn4",
   authDomain: "isterim-kooperatif.firebaseapp.com",
   databaseURL: "https://isterim-kooperatif-default-rtdb.firebaseio.com",
   projectId: "isterim-kooperatif",
